@@ -1,0 +1,15 @@
+[Unit]
+Description=Next.js Easyliker App
+After=network.target
+
+[Service]
+Type=simple
+User=django
+WorkingDirectory=/home/nextjs
+ExecStart=/root/.nvm/versions/node/v20.18.3/bin/npm start
+Restart=always
+Environment=NODE_ENV=production
+Environment=PORT=3000
+
+[Install]
+WantedBy=multi-user.target
