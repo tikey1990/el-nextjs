@@ -1,4 +1,5 @@
-@import "@mixins";
+@use "../../../../../../../../assets/styles/mixins/utils" as *;
+@use "../../../../../../../../assets/styles/variables/colors" as *;
 
 .sum {
     flex-flow: row nowrap !important;

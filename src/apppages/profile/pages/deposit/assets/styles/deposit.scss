@@ -1,4 +1,6 @@
-@import "@mixins";
+@use "../../../../../../assets/styles/variables/colors" as *;
+@use "../../../../../../assets/styles/mixins/utils" as *;
+
 
 // Пополнение баланса
 .deposit__content {

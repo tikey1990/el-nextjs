@@ -1,4 +1,4 @@
-@import "@mixins";
+@use "../../../../../../assets/styles/mixins/utils" as *;
 
 .faq-answering {
     display: flex;

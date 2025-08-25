@@ -1,2 +1,2 @@
 export * from "./form/RHFProvider";
-export StoreProvider from "./StoreProvider";
+export { StoreProvider } from "./StoreProvider";

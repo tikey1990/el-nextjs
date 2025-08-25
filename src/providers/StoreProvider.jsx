@@ -3,7 +3,7 @@ import { useRef } from "react";
 import { Provider } from "react-redux";
 import { makeStore } from "@store";
 
-export default function StoreProvider({ children }) {
+export function StoreProvider({ children }) {
   const storeRef = useRef(null);
   if (!storeRef.current) {
     // Create the store instance the first time this renders

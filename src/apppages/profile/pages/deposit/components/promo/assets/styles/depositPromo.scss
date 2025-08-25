@@ -1,4 +1,4 @@
-@import "@mixins";
+@use "../../../../../../../../assets/styles/mixins/utils" as *;
 
 .promo {
     background: url("../icons/img-detail-promo.svg") no-repeat right center, url("../icons/icon-details-promo.svg") no-repeat right center;
