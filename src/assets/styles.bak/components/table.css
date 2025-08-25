@@ -1,0 +1,42 @@
+@media screen and (max-width: theme("screens.sm")) {
+    .tableAdaptive div[data-testid="table-element"] {
+        border: none !important;
+    }
+
+    .tableAdaptive table thead {
+        display: none !important;
+    }
+
+    .tableAdaptive table tbody {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .tableAdaptive table tr {
+        display: flex !important;
+        flex-direction: column;
+        border-radius: 16px;
+    }
+
+    .tableAdaptive table td:first-child {
+        background: linear-gradient(90deg, #59cbff 0%, #009fe7 100%), #07f;
+    }
+
+    .tableAdaptive table td {
+        display: flex !important;
+        border-top-right-radius: 16px;
+        border-top-left-radius: 16px;
+        padding: 8px 16px;
+    }
+
+    .tableAdaptive table td::before {
+        width: 20%;
+        text-align: left;
+        margin: auto 0;
+        content: attr(data-label) !important;
+        margin-right: 20px !important;
+        color: theme("colors.gray.600");
+        font-family: "ProximaNova-Semibold", sans-serif;
+    }
+}

@@ -1,0 +1,15 @@
+@import "@mixins";
+
+.faq-contacts {
+    h2 {
+        margin-bottom: 24px;
+    }
+
+    &__wrapper {
+        display: flex;
+        flex-flow: column nowrap;
+
+        gap: 16px;
+        margin-bottom: 40px;
+    }
+}

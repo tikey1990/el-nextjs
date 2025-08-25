@@ -1,0 +1,172 @@
+@use "../../../../../assets/styles/mixins/utils" as *;
+@use "../../../../../assets/styles/mixins/typography" as *;
+@use "../../../../../assets/styles/variables/colors" as *;
+
+// Preview
+
+.preview-title h1 {
+    text-shadow: 0 2px 13px rgba(255, 255, 255, 0.32);
+}
+.home__preview {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-top: 60px;
+    margin-bottom: 80px;
+
+    &__wrapper:first-child {
+        height: 653px;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        gap: 30px;
+
+        &.auth {
+            width: 100%;
+
+            justify-content: center;
+            align-items: flex-start;
+
+            @media screen and (max-width: 1014px) {
+                width: 100%;
+                padding: 0;
+                justify-content: flex-start;
+                align-items: flex-start;
+                margin-bottom: -20px !important;
+
+                background: url("/media/images/img-home-phone-mobile.png") no-repeat right;
+            }
+        }
+
+        @media screen and (max-width: 1014px) {
+            width: 100%;
+
+            background: url("/media/images/img-home-phone-mobile.png") no-repeat right bottom;
+            background-size: 230px;
+        }
+
+        @include respond-to(mobile) {
+            height: auto;
+
+            margin: 0 auto;
+            gap: 20px;
+        }
+
+        @media screen and (max-width: 426px) {
+            width: 100%;
+            min-height: 280px;
+        }
+    }
+
+    &__wrapper:last-child {
+        &.auth {
+            width: 50%;
+
+            justify-content: flex-end;
+            align-items: flex-end;
+        }
+
+        @media screen and (max-width: 1014px) {
+            display: none;
+        }
+    }
+
+    .preview-icon__phone {
+        width: 100%;
+    }
+
+    .preview-title {
+        max-width: 655px;
+
+        font-family: "ProximaNova-ExtraBoldIt", Arial, sans-serif;
+        font-weight: 800;
+        font-size: 64px;
+        line-height: 105%;
+
+        @include respond-to(mobile) {
+            max-width: 191px;
+
+            font-size: 28px;
+            line-height: 105%;
+        }
+    }
+
+    .home-description {
+        max-width: 356px;
+
+        @include text-md();
+
+        font-size: 32px;
+        line-height: 130%;
+
+        @include respond-to(mobile) {
+            max-width: 178px;
+
+            font-size: 16px;
+            line-height: 140%;
+        }
+    }
+
+    .preview__buttons {
+        display: flex;
+        flex-direction: row;
+
+        gap: 27px;
+
+        margin-top: 30px;
+
+        .button {
+            height: 70px;
+
+            @include text-md();
+
+            font-size: 20px;
+            line-height: 100%;
+
+            &-auth {
+                width: 150px;
+
+                padding: 19px 48px;
+
+                @include respond-to(mobile) {
+                    width: 90px;
+                }
+            }
+
+            &-reg {
+                width: 255px;
+
+                padding: 19px 27px;
+
+                @include respond-to(mobile) {
+                    width: 100%;
+                }
+            }
+
+            @include respond-to(mobile) {
+                height: 54px;
+
+                font-size: 16px;
+                line-height: 100%;
+            }
+        }
+
+        @include respond-to(mobile) {
+            gap: 10px;
+
+            margin-top: 0;
+            transform: translateY(50px);
+        }
+    }
+
+    @include respond-to(mobile) {
+        margin-bottom: 180px;
+    }
+}

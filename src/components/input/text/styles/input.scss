@@ -1,0 +1,137 @@
+@use "../../../../assets/styles/variables/colors" as *;
+@use "../../../../assets/styles/mixins/typography" as *;
+@use "../../../../assets/styles/mixins/utils" as *;
+
+// Компонент поля ввода
+
+input.input,
+textarea.input {
+    height: 60px;
+
+    padding: 20px;
+
+    background: #fcfcfd;
+    border: none;
+    outline: 1px solid $color-l-blue-100;
+    box-shadow: inset 0 2px 6px rgba(42, 45, 54, 0.06);
+    border-radius: 16px;
+
+    color: $color-black;
+    cursor: text;
+
+    @include text-md();
+
+    .input__wrapper {
+        display: flex;
+        flex-direction: column;
+
+        gap: 12px;
+    }
+
+    // Placeholder
+    &::placeholder {
+        color: $color-grey-300;
+    }
+
+    // Disabled
+    &:disabled {
+        opacity: 0.5;
+        outline: 1px solid #e8ebf1;
+    }
+
+    // Focus
+    &:focus {
+        outline: 1px solid #009fe7;
+
+        // Hover in focus
+        &:hover {
+            outline: 1px solid #009fe7;
+        }
+    }
+
+    // Hover
+    &:hover {
+        outline: 1px solid #caecfc;
+    }
+
+    // Если поле не проходит валидацию
+    &.input--error {
+        outline: 1px solid $color-red !important;
+
+        // Focus
+        &:focus {
+            outline: 1px solid $color-red !important;
+
+            // Hover in focus
+            &:hover {
+                outline: 1px solid $color-red !important;
+            }
+        }
+
+        // Hover
+        &:hover {
+            outline: 1px solid $color-red !important;
+        }
+    }
+
+    // Если поле проходит валидацию
+    &.input--success {
+        outline: 1px solid $color-green-300 !important;
+
+        // Focus
+        &:focus {
+            outline: 1px solid $color-green-300 !important;
+
+            // Hover in focus
+            &:hover {
+                outline: 1px solid $color-green-300 !important;
+            }
+        }
+
+        // Hover
+        &:hover {
+            outline: 1px solid $color-green-300 !important;
+        }
+    }
+
+    & + .message-error {
+        width: 100%;
+
+        & > svg {
+            transform: translateY(1px);
+        }
+    }
+
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus,
+    &:-webkit-autofill:active {
+        transition: background-color 5000s ease-in-out 0s;
+        -webkit-text-fill-color: $color-black;
+    }
+
+    @include respond-to(mobile) {
+        height: 50px;
+    }
+}
+
+.input-password {
+    button {
+        width: 15px;
+        height: 15px;
+
+        position: absolute;
+
+        transform: translate(-30px, 22px);
+
+        outline: none;
+        border: none;
+        background: none;
+
+        cursor: pointer;
+
+        @include respond-to(mobile) {
+            transform: translate(-30px, 18px);
+        }
+    }
+}

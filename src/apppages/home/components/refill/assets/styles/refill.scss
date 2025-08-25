@@ -1,0 +1,89 @@
+@use "../../../../../../assets/styles/mixins/utils" as *;
+
+// Способы пополнения
+.home__refill {
+    .home-subtitle {
+        max-width: 309px;
+
+        margin-bottom: 70px;
+
+        @include respond-to(mobile) {
+            max-width: 200px;
+
+            margin-bottom: 30px;
+        }
+    }
+
+    &__wrapper {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+
+        gap: 20px;
+
+        &__item {
+            width: 130px;
+            height: 130px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 10px;
+
+            cursor: pointer;
+
+            &:hover {
+                opacity: 0.8;
+            }
+
+            @include respond-to(mobile) {
+                width: 65px;
+                height: 65px;
+
+                border-radius: 50%;
+
+                & > img {
+                    width: 25px;
+                    height: 25px;
+                }
+
+                &.refill-gpay > img {
+                    width: 43px;
+                    height: 18px;
+                }
+                &.refill-tinkoff > img {
+                    width: 30px;
+                }
+                &.refill-tele2 > img {
+                    width: 45px;
+                    height: 20px;
+                }
+                &.refill-pm > img {
+                    width: 40px;
+                    height: 20px;
+                }
+                &.refill-bilajn > img {
+                    width: 52px;
+                    height: 12px;
+                }
+                &.refill-alfa > img {
+                    width: 16px;
+                }
+                &.refill-lolz > img {
+                    @include respond-to(mobile) {
+                        width: 40px;
+                    }
+                }
+            }
+        }
+
+        @include respond-to(mobile) {
+            justify-content: center;
+
+            gap: 10px;
+        }
+    }
+}

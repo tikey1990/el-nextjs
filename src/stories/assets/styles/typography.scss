@@ -1,0 +1,59 @@
+@import "@assets/styles/mixins/mixins";
+
+.typography {
+    display: flex;
+    flex-direction: column;
+
+    gap: 40px;
+
+    @include textBlack;
+
+    &-title {
+        width: 100%;
+
+        font-weight: 700;
+        font-size: 40px;
+    }
+
+    &-subtitle {
+        width: 100%;
+        font-size: 32px;
+    }
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+
+        gap: 15px;
+
+        & > * {
+            @include textWhite();
+        }
+
+        & > h1 {
+            @include h1;
+        }
+        & > h2 {
+            @include h2;
+        }
+        & > h3 {
+            @include h3;
+        }
+        & > h4 {
+            @include h4;
+        }
+
+        & > .text-sm {
+            @include text-sm;
+        }
+        & > .text-sm-bold {
+            @include text-sm-bold;
+        }
+        & > .text-md {
+            @include text-md;
+        }
+        & > .text-md-bold {
+            @include text-md-bold;
+        }
+    }
+}

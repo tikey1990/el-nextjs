@@ -1,0 +1,94 @@
+/*
+    Фиксы для стилизации инпутов при автозаполнении
+*/
+/* Дефолтное состояние */
+input.input-default:-webkit-autofill,
+input.input-default:-webkit-autofill:hover,
+input.input-default:-webkit-autofill:focus,
+input.input-default:-webkit-autofill:active {
+    transition: background-color 5000s ease-in-out 0s;
+    -webkit-text-fill-color: theme("colors.gray.500");
+    background: #fcfcfd;
+}
+/* Состояние ошибки */
+input.input-failure:-webkit-autofill,
+input.input-failure:-webkit-autofill:hover,
+input.input-failure:-webkit-autofill:focus,
+input.input-failure:-webkit-autofill:active {
+    transition: background-color 5000s ease-in-out 0s;
+    -webkit-text-fill-color: theme("colors.gray.500");
+    background: theme("colors.gray.700");
+}
+/* Состояние подтверждения */
+input.input-success:-webkit-autofill,
+input.input-success:-webkit-autofill:hover,
+input.input-success:-webkit-autofill:focus,
+input.input-success:-webkit-autofill:active {
+    transition: background-color 5000s ease-in-out 0s;
+    -webkit-text-fill-color: theme("colors.gray.500");
+    background: theme("colors.gray.700");
+}
+
+input[data-type="auth"]:-webkit-autofill,
+input[data-type="auth"]:-webkit-autofill:hover,
+input[data-type="auth"]:-webkit-autofill:focus,
+input[data-type="auth"]:-webkit-autofill:active {
+    transition: background-color 5000s ease-in-out 0s;
+    -webkit-text-fill-color: theme("colors.white") !important;
+}
+
+@-moz-document url-prefix() {
+    .font-md-moz-fix {
+        font-weight: 600 !important;
+    }
+}
+
+/* Фикс для safari (закругленный outline) */
+.pseudoOutlineSafari:after {
+    content: "";
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    bottom: 6px;
+    right: 6px;
+    border-radius: 12px;
+    z-index: 1;
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.16);
+}
+
+/* Фикс для safari (закругленный outline) */
+.pseudoOutlineBlueSafari:after {
+    content: "";
+    position: absolute;
+    top: 1px;
+    left: 1px;
+    bottom: 1px;
+    right: 1px;
+    border-radius: 35px;
+    z-index: 1;
+    box-shadow: 0 0 0 1px #009fe7;
+}
+
+/* Фикс для safari (закругленный outline) */
+.pseudoOutlineServicesTabsSafari:after {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    bottom: 2px;
+    right: 2px;
+    border-radius: 35px;
+    z-index: 1;
+    box-shadow: 0 0 0 2px #cef0ff;
+}
+
+@media screen and (max-width: theme("screens.sm")) {
+    .pseudoOutlineServicesTabsSafari:after {
+        border-radius: 16px;
+    }
+}
+
+/* Для Safari */
+.scroll-touch {
+    -webkit-overflow-scrolling: touch;
+}

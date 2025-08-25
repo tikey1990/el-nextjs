@@ -1,0 +1,57 @@
+@use "../../../assets/styles/variables/colors" as *;
+
+// Hover button
+@mixin HoverButton($type) {
+    @if ($type == primary) {
+        background: $color-grad-blue-100;
+    } @else if ($type == secondary) {
+        background: $color-grad-blue-100;
+        color: $color-white;
+
+        // Svg
+        svg {
+            fill: $color-white;
+        }
+    } @else if ($type == transparent) {
+        background: $color-grad-blue-300;
+        color: $color-white;
+
+        // Svg
+        svg {
+            fill: $color-white;
+        }
+    } @else if ($type == cancel) {
+        background: #ff5d5d;
+    } @else if ($type == disabled) {
+        background: $color-l-blue-100;
+        outline: none;
+    }
+}
+
+// Focus button
+@mixin FocusButton() {
+    outline: 2px solid $color-blue-300;
+}
+
+// Disabled button
+@mixin DisabledButton() {
+    background: $color-l-blue-100;
+    outline: none;
+    color: $color-white;
+    filter: none;
+
+    // Svg
+    svg {
+        fill: $color-white;
+    }
+
+    // Hover button
+    &:hover {
+        @include HoverButton(disabled);
+    }
+
+    // Focus button
+    &:focus {
+        @include FocusButton();
+    }
+}

@@ -1,0 +1,155 @@
+@import "@assets/styles/mixins/mixins";
+
+// UI палитра
+.ui {
+    display: flex;
+    flex-direction: column;
+
+    gap: 60px;
+
+    // Секция с цветами
+    .container__colors {
+        gap: 40px;
+
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+
+        .elem__color {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            &-text {
+                margin-top: 8px;
+            }
+
+            & > div {
+                width: 40px;
+                height: 40px;
+
+                border-radius: 50%;
+            }
+
+            &--black {
+                background: $color-black;
+            }
+            &--white {
+                background: $color-white;
+            }
+
+            &--grey-300 {
+                background: $color-grey-300;
+            }
+            &--grey-200 {
+                background: $color-grey-200;
+            }
+            &--grey-100 {
+                background: $color-grey-100;
+            }
+
+            &--blue-300 {
+                background: $color-blue-300;
+            }
+            &--blue-200 {
+                background: $color-blue-200;
+            }
+            &--blue-100 {
+                background: $color-blue-100;
+            }
+
+            &--grad-blue-300 {
+                background: $color-grad-blue-300;
+            }
+            &--grad-blue-200 {
+                background: $color-grad-blue-200;
+            }
+            &--grad-blue-100 {
+                background: $color-grad-blue-300;
+            }
+
+            &--green-300 {
+                background: $color-green-300;
+            }
+            &--green-200 {
+                background: $color-green-300;
+            }
+            &--green-100 {
+                background: $color-green-300;
+            }
+
+            &--yellow {
+                background: $color-yellow;
+            }
+
+            &--red {
+                background: $color-red;
+            }
+
+            &--l-blue-300 {
+                background: $color-l-blue-300;
+            }
+            &--l-blue-200 {
+                background: $color-l-blue-200;
+            }
+            &--l-blue-100 {
+                background: $color-l-blue-100;
+            }
+        }
+    }
+
+    // Секция с отступами
+    .container__sizes {
+        display: flex;
+        flex-direction: column;
+
+        .elem-size {
+            margin: 0 auto;
+            width: 50%;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+
+            @include textBlack();
+
+            &.elem-size-sm {
+                height: 8px;
+                margin-bottom: $size-sm;
+                background-color: #fe8485;
+            }
+            &.elem-size-md {
+                height: 12px;
+                margin-bottom: $size-md;
+                background-color: #ff93df;
+            }
+            &.elem-size-lg {
+                height: 16px;
+                margin-bottom: $size-lg;
+                background-color: #95deee;
+            }
+            &.elem-size-xl {
+                height: 20px;
+                margin-bottom: $size-xl;
+                background-color: #dcec7d;
+            }
+            &.elem-size-2xl {
+                height: 24px;
+                margin-bottom: $size-2xl;
+                background-color: #8eeca2;
+            }
+            &.elem-size-3xl {
+                height: 32px;
+                margin-bottom: $size-3xl;
+                background-color: #ffd0b6;
+            }
+            &.elem-size-4xl {
+                height: 40px;
+                margin-bottom: $size-4xl;
+                background-color: #e2dbfc;
+            }
+        }
+    }
+}

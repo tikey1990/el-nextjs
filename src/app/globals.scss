@@ -1,0 +1,11 @@
+/* Tailwind css */
+@use "tailwindcss/base" as *;
+@use "tailwindcss/components" as *;
+@use "tailwindcss/utilities" as *;
+
+/* Normalize */
+@use "normalize.css/normalize.css";
+
+@use '../assets/styles' as *;
+
+@config "../../tailwind.config.js";

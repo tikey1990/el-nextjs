@@ -1,0 +1,59 @@
+@use "../../../assets/styles/variables/colors" as *;
+
+.table__container {
+    border-radius: 16px;
+    overflow: hidden;
+
+    table {
+        border-collapse: collapse;
+    }
+
+    .table-default {
+        width: 100%;
+        border-spacing: 0;
+
+        color: $color-black;
+
+        @media screen and (-webkit-min-device-pixel-ratio: 0) {
+            thead {
+                color: $color-white;
+                background: linear-gradient(90deg, #59cbff 0%, #009fe7 100%);
+            }
+
+            @supports (-webkit-touch-callout: none) {
+                thead {
+                    background: linear-gradient(to bottom, #59cbff 0%, #009fe7 100%);
+                }
+            }
+        }
+
+        tr {
+            :last-child {
+                td {
+                    border-bottom: 0;
+                }
+            }
+        }
+
+        th {
+            text-align: center;
+        }
+
+        td {
+            text-align: center;
+            margin: 0;
+            border-bottom: 1px solid #e8ebf1;
+
+            width: 1%;
+
+            :last-child {
+                border-right: 0;
+            }
+        }
+
+        td,
+        th {
+            padding: 24px;
+        }
+    }
+}

@@ -1,0 +1,16 @@
+progress {
+    -webkit-appearance: none;
+}
+
+::-webkit-progress-bar {
+    height: 8px;
+
+    background: #fcfcfd;
+    border: 1px solid #e8ebf1;
+    border-radius: 6px;
+}
+
+::-webkit-progress-value {
+    background: linear-gradient(90deg, #59cbff 0%, #009fe7 100%);
+    border-radius: 6px;
+}

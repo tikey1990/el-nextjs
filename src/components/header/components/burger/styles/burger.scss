@@ -1,0 +1,19 @@
+@use "../../../../../assets/styles/mixins/utils" as *;
+
+.header__actions__burger {
+    display: none;
+    background: transparent;
+    border: none;
+    outline: none;
+    padding: 0;
+
+    &:hover {
+        cursor: pointer;
+    }
+
+    @include respond-to(mobile) {
+        display: block;
+        position: absolute;
+        right: 20px;
+    }
+}

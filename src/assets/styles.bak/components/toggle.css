@@ -1,0 +1,28 @@
+button[role="switch"] > .toggle-bg:after {
+    content: "";
+    position: absolute;
+    top: 5px;
+    z-index: 10;
+    left: 5px;
+    border: none;
+    height: 20px;
+    width: 24px;
+    transition-property: all;
+    -webkit-transition-duration: 0.15s;
+    transition-duration: 0.15s;
+    -webkit-box-shadow: var(--tw-ring-inset) 0 0 0 calc(0px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+    box-shadow: var(--tw-ring-inset) 0 0 0 calc(0px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+}
+
+button[role="switch"][aria-checked="true"] > .toggle-bg:after {
+    background-image: url("../../media/icons/icon-toggle-on.svg");
+}
+
+button[role="switch"][aria-checked="false"] > .toggle-bg:after,
+button[role="switch"] > .toggle-bg:after {
+    background-image: url("../../media/icons/icon-toggle-off.svg");
+}
+
+button[role="switch"][aria-checked="false"] > span {
+    color: theme("colors.gray.500");
+}

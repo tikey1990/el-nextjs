@@ -1,0 +1,45 @@
+@import "@mixins";
+
+.form {
+    &__group {
+        display: flex;
+        flex-flow: wrap row;
+        justify-content: space-between;
+        align-items: flex-end;
+
+        @media screen and (max-width: 1200px) {
+            align-items: flex-start;
+            flex-flow: column nowrap;
+
+            gap: 20px;
+        }
+    }
+
+    &__label {
+        margin-bottom: 24px;
+    }
+
+    &-submit {
+        margin-left: auto;
+
+        @media screen and (max-width: 1200px) {
+            height: 60px;
+            width: 100%;
+        }
+    }
+
+    .message-error {
+        margin-top: 8px;
+        line-height: 120%;
+    }
+
+    &-server-error {
+        position: absolute;
+
+        background: $color-red;
+        color: $color-white;
+
+        padding: 16px 24px;
+        border-radius: 16px;
+    }
+}

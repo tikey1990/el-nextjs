@@ -1,0 +1,50 @@
+@import "@mixins";
+
+.faq-answering {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+
+    gap: 20px;
+    padding: 0 20px;
+
+    border: 1px solid #e8ebf1;
+    border-radius: 16px;
+
+    svg {
+        @include respond-to(mobile) {
+            width: 92px;
+            height: 72px;
+        }
+    }
+
+    .text {
+        font-size: 22px;
+        line-height: 100%;
+
+        .text {
+            font-size: 20px;
+            white-space: nowrap;
+        }
+
+        @include respond-to(mobile) {
+            max-width: 50%;
+
+            display: inline-flex;
+            flex-direction: column;
+
+            gap: 10px;
+
+            font-size: 15px !important;
+            line-height: 120%;
+        }
+    }
+
+    @include respond-to(mobile) {
+        justify-content: space-evenly;
+
+        border: none;
+        border-radius: 0;
+        padding: 0;
+    }
+}

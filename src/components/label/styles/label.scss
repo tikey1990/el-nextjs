@@ -1,0 +1,55 @@
+@use "../../../assets/styles/variables/colors" as *;
+@use "../../../assets/styles/mixins/utils" as *;
+
+label {
+    display: flex;
+
+    gap: 24px;
+
+    font-family: "ProximaNova-BoldIt", Arial, sans-serif;
+    font-size: 20px;
+    line-height: 120%;
+    color: $color-black;
+
+    &.label {
+        &-align {
+            &-start {
+                align-items: flex-start;
+            }
+            &-center {
+                align-items: center;
+            }
+            &-end {
+                align-items: flex-end;
+            }
+        }
+
+        &-justify {
+            &-start {
+                justify-content: flex-start;
+            }
+            &-center {
+                justify-content: center;
+            }
+            &-end {
+                justify-content: flex-end;
+            }
+        }
+
+        &-direction {
+            &-column {
+                flex-direction: column;
+            }
+            &-row {
+                flex-direction: row;
+            }
+        }
+    }
+
+    @include respond-to(mobile) {
+        gap: 12px;
+
+        font-size: 16px;
+        line-height: 120%;
+    }
+}

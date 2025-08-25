@@ -1,0 +1,36 @@
+<svg width="1920" height="915" viewBox="0 0 1920 915" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g filter="url(#filter0_d_1981_16965)">
+<rect x="1821.56" y="71" width="175.379" height="175.379" rx="39.9711" transform="rotate(34.5894 1821.56 71)" fill="url(#paint0_linear_1981_16965)"/>
+</g>
+<g filter="url(#filter1_d_1981_16965)">
+<rect x="-31.8242" y="711.445" width="144.533" height="144.533" rx="33.6112" transform="rotate(-21.4054 -31.8242 711.445)" fill="url(#paint1_linear_1981_16965)"/>
+</g>
+<defs>
+<filter id="filter0_d_1981_16965" x="1623.42" y="0.968704" width="441.102" height="441.102" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dy="28.5508"/>
+<feGaussianBlur stdDeviation="57.1016"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0.623529 0 0 0 0 0.905882 0 0 0 0.5 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_1981_16965"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_1981_16965" result="shape"/>
+</filter>
+<filter id="filter1_d_1981_16965" x="-84.4173" y="621.737" width="292.499" height="292.499" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dy="15.6331"/>
+<feGaussianBlur stdDeviation="31.2663"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0.623529 0 0 0 0 0.905882 0 0 0 0.5 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_1981_16965"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_1981_16965" result="shape"/>
+</filter>
+<linearGradient id="paint0_linear_1981_16965" x1="1821.56" y1="158.689" x2="1996.94" y2="158.689" gradientUnits="userSpaceOnUse">
+<stop stop-color="#59CBFF"/>
+<stop offset="1" stop-color="#009FE7"/>
+</linearGradient>
+<linearGradient id="paint1_linear_1981_16965" x1="-31.8242" y1="783.712" x2="112.708" y2="783.712" gradientUnits="userSpaceOnUse">
+<stop stop-color="#59CBFF"/>
+<stop offset="1" stop-color="#009FE7"/>
+</linearGradient>
+</defs>
+</svg>

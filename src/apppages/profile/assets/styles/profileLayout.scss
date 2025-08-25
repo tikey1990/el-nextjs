@@ -1,0 +1,25 @@
+@import "../../../../assets/styles/mixins/utils";
+
+// Страница профиля
+.profile {
+    display: flex;
+    flex-flow: nowrap column;
+    min-width: 100%;
+    padding: 40px;
+
+    margin-bottom: 60px !important;
+
+    &__wrapper {
+        display: flex;
+        flex-flow: nowrap row;
+        align-items: stretch;
+
+        gap: 30px;
+
+        @include respond-to(mobile) {
+            flex-flow: nowrap column;
+
+            gap: 16px;
+        }
+    }
+}

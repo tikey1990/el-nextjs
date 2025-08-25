@@ -1,0 +1,164 @@
+@use "../../../../assets/styles/mixins/utils" as *;
+@use "../../../../assets/styles/mixins/typography" as *;
+@use "../../../../assets/styles/variables/colors" as *;
+
+// Боковое меню тарифов
+.aside {
+    .aside-bg-premium {
+        background: url("../../assets/icons/icon-aside-bg-premium.webp") no-repeat top 17px right, white;
+        background-size: cover;
+    }
+
+    .aside-bg-premium-bal {
+        background: url("../../assets/icons/icon-aside-bg-premium-bal.png") no-repeat top 3px left 3px,
+            theme("backgroundImage.gradient-premium");
+    }
+
+    .container__item {
+        display: flex;
+        flex-flow: nowrap row;
+        align-items: center;
+
+        gap: 12px;
+
+        &.item-auth {
+            flex-flow: column nowrap;
+            align-items: flex-start;
+
+            gap: 1rem;
+            margin-bottom: 14px;
+
+            button {
+                height: 60px;
+                width: 100%;
+            }
+
+            @include respond-to(mobile) {
+                flex-flow: row wrap;
+                justify-content: center;
+
+                margin-bottom: 0;
+
+                gap: 12px;
+            }
+        }
+
+        &-text {
+            color: $color-black;
+
+            @include text-md();
+
+            @include respond-to(mobile) {
+                font-size: 16px;
+            }
+        }
+    }
+
+    &__container {
+        display: flex;
+        flex-flow: nowrap column;
+
+        padding: 20px 24px;
+        gap: 6px;
+
+        background: $color-white;
+        box-shadow: 0 30px 60px rgba(13, 34, 79, 0.8);
+        border-radius: 16px;
+
+        // Просмотр баланса
+        &.container--bal {
+            svg {
+                fill: #009fe7;
+            }
+
+            &-mobile {
+                .container__item {
+                    justify-content: space-between;
+                }
+            }
+
+            .container__item-text {
+                font-family: "ProximaNova-Bold", Arial, sans-serif;
+                font-weight: 700;
+
+                & > .bal {
+                    color: #009fe7;
+
+                    & > .rub {
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+
+        // Пополнение баланса
+        &.container--bal-refill {
+            background: linear-gradient(90deg, #58ff8b 0%, #00e75c 100%);
+
+            svg {
+                fill: $color-white;
+            }
+
+            .container__item-text {
+                font-family: "ProximaNova-Semibold", Arial, sans-serif;
+                color: $color-white;
+            }
+        }
+
+        // Категории
+        &.container--categs {
+            padding: 10px;
+
+            .container__item {
+                display: flex;
+                flex-flow: nowrap row;
+
+                gap: 12px;
+                padding: 14px;
+
+                &.active {
+                    background: $color-l-blue-200;
+                    border-radius: 30px;
+                }
+
+                &:hover {
+                    background: $color-l-blue-200;
+                    border-radius: 30px;
+                }
+            }
+        }
+
+        // Реферальный блок
+        &.container--referal {
+            display: flex;
+            flex-flow: column nowrap;
+            align-items: center;
+
+            padding: 25px 20px;
+            gap: 8px;
+
+            .text {
+                max-width: 220px;
+                text-align: center;
+            }
+
+            .referal-title {
+            }
+
+            .referal-text {
+                font-size: 13px;
+                line-height: 140%;
+            }
+
+            .referal-img {
+                margin-bottom: 10px;
+
+                transform: translateX(5px);
+            }
+        }
+    }
+
+    @include respond-to(mobile) {
+        min-width: 100%;
+    }
+}

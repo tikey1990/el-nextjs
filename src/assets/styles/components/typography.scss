@@ -1,0 +1,97 @@
+@import "@mixins";
+
+// Текст
+.text {
+    @include text-md();
+
+    /**
+        Размерность
+     */
+    &-size {
+        &-ultra-sm {
+            font-size: 10px;
+            line-height: 130%;
+        }
+        &-sm {
+            @include text-sm();
+        }
+        &-md {
+            @include text-md();
+        }
+        &-ultra-md {
+            font-size: 20px;
+            line-height: 130%;
+
+            @include respond-to(mobile) {
+                font-size: 18px;
+            }
+        }
+        &-lg {
+            font-size: 24px;
+            line-height: 120%;
+
+            @include respond-to(mobile) {
+                font-size: 22px;
+                line-height: 120%;
+            }
+        }
+        &-xl {
+            font-size: 32px;
+            line-height: 120%;
+
+            @include respond-to(mobile) {
+                font-size: 24px;
+                line-height: 120%;
+            }
+        }
+    }
+
+    /**
+        Тип
+     */
+    &-type {
+        &-regular {
+            font-family: "ProximaNova-Regular", Arial, sans-serif;
+
+            &-it {
+                font-family: "ProximaNova-RegularIt", Arial, sans-serif;
+            }
+        }
+        &-semibold {
+            font-family: "ProximaNova-Semibold", Arial, sans-serif;
+
+            &-it {
+                font-family: "ProximaNova-SemiboldIt", Arial, sans-serif;
+            }
+        }
+        &-bold {
+            font-family: "ProximaNova-Bold", Arial, sans-serif;
+
+            &-it {
+                font-family: "ProximaNova-BoldIt", Arial, sans-serif;
+            }
+        }
+        &-extrabold {
+            font-family: "ProximaNova-ExtraBold", Arial, sans-serif;
+
+            &-it {
+                font-family: "ProximaNova-ExtraBoldIt", Arial, sans-serif;
+            }
+        }
+    }
+
+    /**
+        Цвета
+     */
+    &-color {
+        &-black {
+            color: $color-black;
+        }
+        &-white {
+            color: $color-white;
+        }
+        &-primary {
+            color: $color-blue-300;
+        }
+    }
+}

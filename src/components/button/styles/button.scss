@@ -1,0 +1,86 @@
+@use "butonSizes" as *;
+@use "buttonVariants" as *;
+@use "buttonStatus" as *;
+@use "../../../assets/styles/mixins/typography" as *;
+
+// Стили компонента кнопки
+.button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 35px;
+    border: none;
+    outline: none;
+
+    @include h4();
+
+    // Svg
+    svg {
+        fill: white;
+    }
+
+    /*
+        Sizes
+     */
+    // Large button
+    &--large {
+        @include LargeButton();
+    }
+    // Normal button
+    &--normal {
+        @include NormalButton();
+    }
+    // Medium button
+    &--medium {
+        @include MediumButton();
+    }
+    // Small button
+    &--small {
+        @include SmallButton();
+    }
+
+    /*
+        Variants
+     */
+    // Primary button
+    &--primary {
+        @include PrimaryButton();
+    }
+    // Secondary button
+    &--secondary {
+        @include SecondaryButton();
+    }
+    // Transparent button
+    &--transparent {
+        @include TransparentButton();
+    }
+    // Cancel button
+    &--cancel {
+        @include CancelButton();
+    }
+    // Custom button
+    &--custom {
+    }
+
+    // Button disabled
+    &--disabled {
+        @include DisabledButton();
+    }
+
+    &:hover {
+        cursor: pointer;
+    }
+
+    // Счетчик в кнопке
+    & > &-counter {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        border-radius: 35px;
+
+        padding: 5px 8px;
+    }
+}

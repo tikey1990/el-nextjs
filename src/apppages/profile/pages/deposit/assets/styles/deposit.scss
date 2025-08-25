@@ -1,0 +1,34 @@
+@import "@mixins";
+
+// Пополнение баланса
+.deposit__content {
+    width: 100%;
+
+    display: flex;
+    flex-flow: column nowrap;
+
+    gap: 20px;
+
+    &__wrapper {
+        padding: 40px;
+
+        background: $color-white;
+        box-shadow: 0 30px 60px rgba(13, 34, 79, 0.8);
+        border-radius: 16px;
+
+        @media screen and (max-width: 1199px) {
+            background: $color-white !important;
+        }
+
+        @include respond-to(mobile) {
+            padding: 24px 20px;
+        }
+    }
+
+    button[type="submit"] {
+        @include respond-to(mobile) {
+            width: 100%;
+            height: 50px;
+        }
+    }
+}

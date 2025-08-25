@@ -1,0 +1,173 @@
+@use "../../../../assets/styles/mixins/utils" as *;
+@use "../../../../assets/styles/mixins/bg" as *;
+@use "../../../../assets/styles/mixins/typography" as *;
+@use "../../../../assets/styles/variables/colors" as *;
+
+// Шапка
+.header {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 40px;
+
+    // Навигация
+    &__nav {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+
+        gap: 30px;
+
+        &__item {
+            display: flex;
+            list-style-type: none;
+
+            .header__nav-link {
+                transition: background-color, color 0.25s ease-in-out;
+
+                &:hover {
+                    outline: 1px solid rgba(0, 159, 231, 0.14);
+                    background: rgba(0, 159, 231, 0.08);
+                    color: $color-white;
+                }
+            }
+
+            &.active {
+                @include respond-to(mobile) {
+                    background: theme("backgroundImage.gradient-menu");
+                }
+
+                @media screen and (min-width: 767px) {
+                    .header__nav-link {
+                        outline: 1px solid rgba(0, 159, 231, 0.14);
+                        background: rgba(0, 159, 231, 0.08);
+                        color: $color-white;
+                    }
+                }
+            }
+
+            &.button {
+                display: flex;
+                justify-content: flex-start;
+
+                @include respond-to(mobile) {
+                    padding: 15px 0;
+                }
+            }
+
+            @include respond-to(mobile) {
+                padding: 15px 0;
+            }
+        }
+
+        &-link {
+            text-decoration: none;
+            color: $color-grey-300;
+            border-radius: 20px;
+
+            padding: 12px 20px;
+            cursor: pointer;
+
+            @include text-md();
+
+            &:hover {
+                @include respond-to(mobile) {
+                    outline: 1px solid rgba(0, 159, 231, 0.14);
+                    background: rgba(0, 159, 231, 0.08);
+
+                    color: $color-white;
+                }
+            }
+        }
+
+        @include respond-to(mobile) {
+            gap: 8px;
+        }
+    }
+
+    &__actions {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+        justify-content: flex-end;
+
+        gap: 20px;
+
+        &-btn {
+            @include text-sm();
+        }
+
+        @media screen and (max-width: 1024px) {
+            margin: 15px 0 0;
+        }
+    }
+
+    @media screen and (max-width: 1014px) {
+        flex-direction: column;
+
+        gap: 30px;
+    }
+
+    @include respond-to(mobile) {
+        // Мобильная версия
+        &--mobile {
+            flex-wrap: wrap;
+
+            padding: 15px;
+
+            .header__wrapper {
+                width: 100%;
+
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .header__nav {
+                display: none;
+            }
+
+            .header__logo {
+                width: 120px;
+                height: 26px;
+            }
+
+            // Открытое состояние
+            &.header--opened {
+                position: fixed;
+
+                height: 100vh;
+                width: 100vw;
+
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: flex-start;
+
+                gap: 25px;
+                z-index: 11;
+
+                .header__nav {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+
+                    padding: 15px 0;
+
+                    .header__nav-link {
+                        color: $color-white;
+
+                        @include text-md-bold();
+                        font-weight: 600;
+                    }
+                }
+
+                @include bgMain();
+            }
+        }
+    }
+}

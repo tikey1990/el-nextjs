@@ -1,0 +1,32 @@
+localhost:4040
+
+encode gzip zstd
+
+root ./
+
+@backend {
+  path /api/*
+}
+
+@frontend {
+  not path /api/*
+}
+
+header {
+    Access-Control-Allow-Origin *
+    Access-Control-Allow-Credentials true
+    Access-Control-Allow-Methods *
+    Access-Control-Allow-Headers *
+    defer
+}
+
+reverse_proxy @backend https://easyliker.ru {
+    header_down -Access-Control-Allow-Origin
+    header_up Host {upstream_hostport}
+    header_up X-Forwarded-Host {host}
+    transport http {
+        tls_insecure_skip_verify
+    }
+}
+
+reverse_proxy @frontend localhost:3000

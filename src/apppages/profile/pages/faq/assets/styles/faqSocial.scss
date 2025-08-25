@@ -1,0 +1,58 @@
+@import "@mixins";
+
+.faq-social {
+    width: 100%;
+
+    display: flex;
+    flex-flow: row nowrap;
+
+    justify-content: space-between;
+
+    gap: 16px;
+    margin-bottom: 40px;
+
+    .social-item {
+        width: calc((100% / 4) - 16px);
+        height: 42px;
+
+        display: flex;
+        align-items: center;
+
+        padding: 12px;
+        gap: 12px;
+
+        border: none;
+
+        border-radius: 10px;
+
+        white-space: nowrap;
+
+        &.telegram {
+            background: linear-gradient(180deg, #2aabee 0%, #229ed9 99.26%);
+        }
+        &.mail {
+            background: linear-gradient(90deg, #59cbff 0%, #009fe7 100%);
+        }
+        &.inst {
+            width: auto;
+            background: linear-gradient(45deg, #ffd600 8.39%, #ff0100 50%, #d800b9 91.61%), #e8ebf1;
+        }
+        &.vk {
+            background: #0077ff;
+        }
+
+        &:hover {
+            cursor: pointer;
+        }
+
+        @include respond-to(mobile) {
+            width: 100%;
+        }
+    }
+
+    @include respond-to(mobile) {
+        flex-flow: column nowrap;
+
+        padding: 0;
+    }
+}

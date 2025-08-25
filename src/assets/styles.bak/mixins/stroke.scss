@@ -1,0 +1,12 @@
+@import "../variables/variables";
+
+// Миксины обводка
+@mixin strokeFocused() {
+    border: 2px solid $color-blue-300;
+}
+@mixin strokeGrey() {
+    border: 2px solid $color-l-blue-300;
+}
+@mixin strokeBlue() {
+    border: 2px solid $color-l-blue-300;
+}

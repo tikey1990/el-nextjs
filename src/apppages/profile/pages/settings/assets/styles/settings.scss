@@ -1,0 +1,46 @@
+@import "@mixins";
+
+.settings {
+    width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+
+    gap: 20px;
+
+    &__wrapper {
+        width: 100%;
+
+        display: flex;
+        flex-flow: column nowrap;
+
+        background: $color-white;
+        box-shadow: 0 30px 60px rgba(13, 34, 79, 0.8);
+        border-radius: 16px;
+
+        padding: 40px;
+        gap: 24px;
+
+        @include respond-to(mobile) {
+            padding: 24px 20px;
+        }
+    }
+
+    &__container {
+        display: flex;
+        flex-flow: row nowrap;
+
+        gap: 20px;
+
+        .settings__wrapper {
+            width: 50%;
+
+            @include respond-to(mobile) {
+                width: 100%;
+            }
+        }
+
+        @include respond-to(mobile) {
+            flex-flow: column nowrap;
+        }
+    }
+}

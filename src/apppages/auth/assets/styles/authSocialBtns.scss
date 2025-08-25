@@ -1,0 +1,62 @@
+@use "../../../../assets/styles/mixins/utils" as *;
+
+.auth__wrapper--social {
+    width: 100%;
+
+    display: flex;
+    flex-direction: row !important;
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px 40px !important;
+    gap: 8px !important;
+
+    background: rgba(0, 159, 231, 0.04) !important;
+    border-radius: 0 0 30px 30px !important;
+
+    @include respond-to(mobile) {
+        flex-direction: column !important;
+
+        padding: 20px !important;
+        gap: 16px;
+    }
+}
+
+.auth__wrapper__socials {
+    display: flex;
+    flex-direction: row;
+
+    gap: 8px;
+
+    &-btn {
+        width: 46px;
+        height: 46px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        outline: none;
+        border: none;
+        border-radius: 30px;
+
+        background: rgba(0, 159, 231, 0.08);
+
+        &:hover {
+            cursor: pointer;
+            background: white;
+
+            .icon-white {
+                display: none;
+            }
+
+            .icon-color {
+                display: block;
+            }
+        }
+
+        .icon-color {
+            display: none;
+        }
+    }
+}

@@ -1,0 +1,75 @@
+@use "../../../assets/styles/mixins/utils" as *;
+@use "../../../assets/styles/mixins/typography" as *;
+
+// Footer
+.footer {
+    width: 100%;
+    max-width: 1200px;
+
+    @media screen and (max-width: 1200px) {
+        max-width: 90%;
+        min-width: 90%;
+    }
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    margin: 40px auto 27px auto;
+
+    padding-bottom: 40px;
+
+    &__wrapper {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+
+        gap: 50px;
+
+        @include respond-to(mobile) {
+            align-items: center;
+            gap: 30px;
+        }
+    }
+
+    &__content {
+        width: 100%;
+
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        @include respond-to(mobile) {
+            flex-direction: column;
+            align-items: center;
+
+            gap: 30px;
+        }
+    }
+
+    &__buttons {
+
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: flex-end;
+
+        gap: 15px;
+
+        .button {
+            @include text-sm();
+        }
+
+        @include respond-to(mobile) {
+            width: 100%;
+            justify-content: space-between;
+            padding: 0 15px;
+        }
+    }
+
+    &-logo {
+        @include respond-to(mobile) {
+            width: 120px;
+            height: 25px;
+        }
+    }
+}

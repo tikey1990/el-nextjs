@@ -1,0 +1,108 @@
+@use "../../../../../../assets/styles/mixins/utils" as *;
+@use "../../../../../../assets/styles/mixins/typography" as *;
+
+
+.home__services {
+    margin-bottom: 180px;
+
+    &--mobile {
+        display: none;
+
+        @include respond-to(mobile) {
+            display: flex;
+            flex-direction: column;
+
+            .home__services__wrapper {
+                &:first-child {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    align-items: center;
+                }
+
+                &:last-child {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                }
+            }
+
+            .home-description {
+                max-width: 220px;
+                text-align: center;
+            }
+        }
+    }
+
+    &--desktop {
+        display: flex;
+
+        justify-content: space-between;
+        flex-direction: row;
+        align-items: center;
+
+        gap: 60px;
+
+        @include respond-to(mobile) {
+            display: none;
+        }
+    }
+
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+
+        gap: 40px;
+
+        @include respond-to(mobile) {
+            gap: 30px;
+        }
+    }
+
+    .home-subtitle {
+        max-width: 584px;
+
+        @include h1();
+
+        font-family: "ProximaNova-ExtraBoldIt", Arial, sans-serif;
+        font-size: 52px;
+        line-height: 120%;
+
+        @include respond-to(mobile) {
+            font-size: 20px;
+            line-height: 120%;
+        }
+    }
+
+    &-img {
+        max-width: 522px;
+
+        filter: drop-shadow(0 0 60px rgba(0, 159, 231, 0.5));
+
+        @include respond-to(mobile) {
+            max-width: 139px;
+        }
+    }
+
+    &-btn {
+        margin-top: 30px;
+        padding: 25px 60px;
+
+        @include text-md();
+
+        font-size: 20px;
+        line-height: 100%;
+
+        @include respond-to(mobile) {
+            padding: 19px 66px;
+            margin-top: 0;
+
+            font-size: 16px;
+            line-height: 100%;
+        }
+    }
+
+    @include respond-to(mobile) {
+        margin-bottom: 80px;
+    }
+}

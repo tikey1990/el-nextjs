@@ -1,0 +1,14 @@
+// Миксины тени
+
+@mixin shadow_1() {
+    box-shadow: 0 4px 8px rgba(13, 34, 79, 0.1);
+}
+@mixin shadow_2() {
+    box-shadow: 0 30px 60px rgba(13, 34, 79, 0.8);
+}
+@mixin shadow_3() {
+    box-shadow: 0 20px 50px rgba(0, 159, 231, 0.5);
+}
+@mixin shadow_4() {
+    box-shadow: 0 60px 120px rgba(13, 34, 79, 0.2);
+}

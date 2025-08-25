@@ -1,0 +1,69 @@
+@import "@mixins";
+
+.refill-deposit {
+    background: url("../images/img-refill-deposit.png") no-repeat right top, $color-white !important;
+
+    h1 {
+        margin-bottom: 40px;
+
+        @include respond-to(mobile) {
+            margin-bottom: 24px;
+        }
+    }
+
+    button {
+        height: 60px;
+
+        &[type="submit"] {
+            width: 163px;
+
+            margin-left: auto;
+        }
+    }
+
+    .refill-form {
+        display: flex;
+        flex-flow: column nowrap;
+
+        gap: 40px;
+
+        @include respond-to(mobile) {
+            gap: 24px;
+        }
+    }
+
+    .refill-form__wrapper {
+        display: flex;
+        flex-flow: row wrap;
+        align-items: flex-end;
+
+        gap: 16px;
+
+        &.coupon {
+            input {
+                width: 361px;
+
+                @include respond-to(mobile) {
+                    width: 100%;
+                }
+            }
+
+            button {
+                width: 160px;
+
+                @include respond-to(mobile) {
+                    width: 100%;
+                    height: 50px;
+
+                    font-size: 16px;
+                }
+            }
+
+            @include respond-to(mobile) {
+                label {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,77 @@
+@use "../../../../assets/styles/mixins/utils" as *;
+
+// Стили обертки для декора
+@mixin details() {
+    pointer-events: none;
+
+    top: 0;
+    left: 0;
+    z-index: -10;
+
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+// Версия №1
+#details--v1 {
+    @include details();
+
+    height: 3488px;
+    top: 10%;
+
+    background: url("../../../../assets/media/icons/details/icon-detail-v1.webp") no-repeat;
+    background-size: 100%;
+
+    @include respond-to(mobile) {
+        background: none;
+    }
+}
+
+// Версия №2
+#details--v2 {
+    @include details();
+
+    background: url("../../../../assets/media/icons/details/icon-detail-v2.svg") no-repeat;
+    background-size: 100% 100%;
+
+    @include respond-to(mobile) {
+        background: none;
+    }
+}
+
+// Версия №3
+#details--v3 {
+    @include details();
+
+    background: url("../../../../assets/media/icons/details/icon-detail-v3.webp") no-repeat;
+    background-size: 100%;
+
+    @include respond-to(mobile) {
+        background: none;
+    }
+}
+
+// Версия №4
+#details--v4 {
+    @include details();
+
+    background: url("../../../../assets/media/icons/details/icon-detail-v4.webp") no-repeat;
+    background-size: 100%;
+
+    @include respond-to(mobile) {
+        background: none;
+    }
+}
+
+// Версия №4
+#details--v5 {
+    @include details();
+
+    background: url("../../../../assets/media/icons/details/icon-detail-v4-premium.webp") no-repeat;
+    background-size: 100%;
+
+    @include respond-to(mobile) {
+        background: none;
+    }
+}

@@ -1,0 +1,101 @@
+@use "../../../../../assets/styles/mixins/typography" as *;
+@use "../../../../../assets/styles/mixins/utils" as *;
+
+.statistic-text-stat-shadow {
+    text-shadow: 0 1px 10px rgba(255, 255, 255, 0.24);
+}
+
+// Преимущества
+.home__statistic {
+    width: 100%;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    padding: 40px 50px;
+    gap: 50px;
+    margin-bottom: 126px;
+
+    background: linear-gradient(270deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.01) 50%, rgba(255, 255, 255, 0) 100%);
+    border-top: 1px solid rgba(255, 255, 255, 0.03);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+
+    &__elem {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        gap: 10px;
+
+        text-align: center;
+
+        .statistic-text-stat {
+            @include h1();
+
+            font-size: 36px;
+            text-shadow: 0 1px 10px rgba(255, 255, 255, 0.24);
+
+            @include respond-to(mobile) {
+                font-size: 20px;
+                line-height: 120%;
+            }
+        }
+
+        .statistic-text-description {
+            @include text-md();
+
+            font-size: 24px;
+            line-height: 28px;
+
+            @include respond-to(mobile) {
+                font-size: 15px;
+                line-height: 120%;
+            }
+        }
+
+        @media screen and (max-width: 1014px) {
+            min-width: 40%;
+        }
+    }
+
+    &__wrapper {
+        width: 42%;
+
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        @media screen and (max-width: 1199px) {
+            flex-direction: column;
+            width: auto;
+
+            gap: 36px;
+        }
+
+        @include respond-to(mobile) {
+            width: 45%;
+
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        @media screen and (max-width: 563px) {
+            flex-direction: column;
+            width: auto;
+
+            gap: 36px;
+        }
+    }
+
+    @media screen and (max-width: 1014px) {
+        gap: 34px;
+
+        flex-wrap: nowrap;
+
+        padding: 35px 0;
+        margin-bottom: 80px;
+    }
+}

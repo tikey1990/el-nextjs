@@ -1,0 +1,90 @@
+@use "../../../assets/styles/variables/colors" as *;
+@use "buttonStatus" as *;
+
+// Primary button
+@mixin PrimaryButton() {
+    background: $color-grad-blue-300;
+    color: $color-white;
+
+    // Hover button
+    &:hover {
+        @include HoverButton(primary);
+    }
+
+    // Focus button
+    &:focus {
+        @include FocusButton();
+    }
+
+    .button-counter {
+        background: $color-white;
+        color: $color-blue-300;
+    }
+}
+
+// Secondary button
+@mixin SecondaryButton() {
+    background: $color-white;
+    color: $color-blue-300;
+    outline: 2px solid $color-blue-300;
+
+    // Svg
+    svg {
+        fill: $color-blue-300;
+    }
+
+    // Hover button
+    &:hover {
+        @include HoverButton(secondary);
+    }
+
+    // Focus button
+    &:focus {
+        @include FocusButton();
+    }
+
+    .button-counter {
+        background: #f0faff;
+        color: #62c2ee;
+    }
+}
+
+// Transparent button
+@mixin TransparentButton() {
+    background: transparent;
+    color: $color-white;
+    outline: 2px solid $color-blue-300;
+
+    filter: drop-shadow(0px 20px 80px rgba(36, 107, 254, 0.5));
+
+    // Svg
+    svg {
+        fill: $color-white;
+    }
+
+    // Hover button
+    &:hover {
+        @include HoverButton(secondary);
+    }
+
+    // Focus button
+    &:focus {
+        @include FocusButton();
+    }
+}
+
+// Cancel button
+@mixin CancelButton() {
+    background: $color-red;
+    color: $color-white;
+
+    // Hover button
+    &:hover {
+        @include HoverButton(cancel);
+    }
+
+    // Focus button
+    &:focus {
+        @include FocusButton();
+    }
+}

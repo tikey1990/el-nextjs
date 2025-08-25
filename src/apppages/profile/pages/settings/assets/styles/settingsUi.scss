@@ -1,0 +1,12 @@
+.ui {
+    form {
+        display: flex;
+        flex-flow: column nowrap;
+
+        gap: 16px;
+    }
+
+    input {
+        width: 100%;
+    }
+}

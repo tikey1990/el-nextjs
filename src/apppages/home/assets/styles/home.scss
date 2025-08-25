@@ -1,0 +1,44 @@
+@import "@mixins";
+
+// Страница "Главная"
+.home {
+    margin-bottom: 180px !important;
+
+    // Описание
+    &-description {
+        @include text-md();
+
+        font-size: 32px;
+        line-height: 41px;
+
+        @include respond-to(mobile) {
+            margin-top: 20px;
+            font-size: 16px;
+            line-height: 22px;
+
+            color: #eff2f8;
+        }
+    }
+
+    button.button-shadow {
+        box-shadow: 0 20px 80px rgba(0, 159, 231, 0.5);
+    }
+
+    &-subtitle {
+        @include h1();
+
+        font-family: "ProximaNova-ExtraBoldIt", Arial, sans-serif;
+        font-size: 52px;
+        line-height: 120%;
+
+        @include respond-to(mobile) {
+            font-family: "ProximaNova-BoldIt", Arial, sans-serif;
+            font-size: 20px;
+            line-height: 120%;
+        }
+    }
+
+    @include respond-to(mobile) {
+        margin-bottom: 80px !important;
+    }
+}

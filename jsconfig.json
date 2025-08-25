@@ -1,7 +1,35 @@
 {
   "compilerOptions": {
+    "baseUrl": "src",
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./*"],
+      "@assets": ["./assets"],
+      "@assets/*": ["./assets/*"],
+      "@apppages/*": ["./apppages/*"],
+      "@features": ["./features"],
+      "@features/*": ["./features/*"],
+      "@components": ["./components"],
+      "@components/*": ["./components/*"],
+      "@config": ["./config"],
+      "@config/*": ["./config/*"],
+      "@decorators": ["./decorators"],
+      "@icons": ["./assets/media/icons"],
+      "@icons/*": ["./assets/media/icons/*"],
+      "@images": ["./assets/media/images"],
+      "@images/*": ["./assets/media/images/*"],
+      "@mixins": ["./assets/styles/mixins/mixins"],
+      "@hooks": ["./hooks"],
+      "@providers": ["./providers"],
+      "@reducers": ["./reducers"],
+      "@styles/*": ["./assets/styles/*"],
+      "@store": ["./store/store.js"],
+      "@stories": ["./stories"],
+      "@stories/*": ["./stories/*"],
+      "@theme": ["./theme"],
+      "@utils": ["./utils"],
+      "@utils/*": ["./utils/*"],
+      "@vars": ["./vars"],
+      "@variables": ["./assets/styles/variables/variables.scss"]
     }
   }
 }

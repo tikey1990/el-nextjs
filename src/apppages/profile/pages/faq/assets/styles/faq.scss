@@ -1,0 +1,22 @@
+@import "@mixins";
+
+.faq {
+    width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+
+    padding: 40px;
+
+    background: $color-white;
+    box-shadow: 0 30px 60px rgba(13, 34, 79, 0.8);
+    border-radius: 16px;
+
+    h1 {
+        margin-bottom: 24px;
+    }
+
+    @include respond-to(mobile) {
+        padding: 24px 20px;
+        z-index: 100;
+    }
+}

@@ -1,0 +1,236 @@
+@import "@mixins";
+
+.bonus-modal {
+    .modal__wrapper {
+        width: 100%;
+
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: center;
+
+        padding: 0 20px;
+    }
+
+    .modal-title {
+        text-align: center;
+
+        margin-bottom: 40px;
+
+        @include respond-to(mobile) {
+            margin-bottom: 24px;
+        }
+    }
+
+    .description {
+        margin-top: 40px;
+
+        @include respond-to(mobile) {
+            margin-top: 24px;
+        }
+    }
+
+    .wrapper {
+        width: 85%;
+        display: flex;
+        flex-flow: column nowrap;
+
+        gap: 15px;
+        transform: translateX(5%);
+
+        &__row {
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: space-between;
+
+            &.percentage {
+                align-items: flex-end;
+
+                .wrapper__row__item {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    background: linear-gradient(90deg, #59cbff 0%, #009fe7 100%);
+                    color: $color-white;
+                    border-radius: 6px;
+
+                    &:nth-child(1) {
+                        width: 41px;
+                        height: 25px;
+
+                        @include respond-to(mobile) {
+                            width: 43px;
+                            height: 30px;
+                        }
+                    }
+                    &:nth-child(2) {
+                        width: 43px;
+                        height: 30px;
+
+                        @include respond-to(mobile) {
+                            width: 43px;
+                            height: 30px;
+                        }
+                    }
+                    &:nth-child(3) {
+                        width: 50px;
+                        height: 35px;
+
+                        @include respond-to(mobile) {
+                            width: 48px;
+                            height: 30px;
+                        }
+                    }
+                    &:nth-child(4) {
+                        width: 50px;
+                        height: 39px;
+
+                        @include respond-to(mobile) {
+                            width: 48px;
+                            height: 30px;
+                        }
+                    }
+                    &:nth-child(5) {
+                        width: 54px;
+                        height: 47px;
+
+                        @include respond-to(mobile) {
+                            width: 51px;
+                            height: 30px;
+                        }
+                    }
+                }
+
+                @include respond-to(mobile) {
+                    flex-flow: column nowrap;
+                }
+            }
+
+            &.progress {
+                flex-flow: row nowrap;
+                justify-content: flex-start;
+                align-items: center;
+
+                .progress-dot {
+                    width: 12px;
+                    height: 12px;
+
+                    background: #e8ebf1;
+                    border-radius: 50%;
+
+                    &.active {
+                        background: linear-gradient(90deg, #59cbff 0%, #009fe7 100%);
+                    }
+                }
+
+                .progress-line {
+                    width: 95px;
+                    height: 3px;
+
+                    background: #e8ebf1;
+
+                    &.active {
+                        background: linear-gradient(90deg, #59cbff 0%, #009fe7 100%);
+                    }
+
+                    @include respond-to(mobile) {
+                        width: 3px;
+                        height: 51px;
+                    }
+                }
+
+                @include respond-to(mobile) {
+                    flex-flow: column nowrap;
+                }
+            }
+
+            &.sum {
+                @include respond-to(mobile) {
+                    flex-flow: column nowrap !important;
+                }
+            }
+
+            &.percentage .wrapper__row__item:nth-child(1) {
+                transform: translateX(-15px);
+
+                @include respond-to(mobile) {
+                    transform: translateY(-7px);
+                }
+            }
+            &.sum .wrapper__row__item:nth-child(1) {
+                transform: translateX(-25px);
+
+                @include respond-to(mobile) {
+                    transform: translateY(-3px);
+                }
+            }
+
+            &.percentage .wrapper__row__item:nth-child(2) {
+                @include respond-to(mobile) {
+                    transform: translateY(-5px);
+                }
+            }
+            &.sum .wrapper__row__item:nth-child(2) {
+                @include respond-to(mobile) {
+                    transform: translateY(-1px);
+                }
+            }
+
+            &.percentage .wrapper__row__item:nth-child(3) {
+                transform: translateX(10px);
+
+                @include respond-to(mobile) {
+                    transform: translateY(0px);
+                }
+            }
+            &.sum .wrapper__row__item:nth-child(3) {
+                transform: translateX(10px);
+
+                @include respond-to(mobile) {
+                    transform: translateY(1px);
+                }
+            }
+
+            &.percentage .wrapper__row__item:nth-child(4) {
+                transform: translateX(15px);
+
+                @include respond-to(mobile) {
+                    transform: translateY(5px);
+                }
+            }
+            &.sum .wrapper__row__item:nth-child(4) {
+                transform: translateX(20px);
+
+                @include respond-to(mobile) {
+                    transform: translateY(2px);
+                }
+            }
+
+            &.percentage .wrapper__row__item:nth-child(5) {
+                transform: translateX(20px);
+
+                @include respond-to(mobile) {
+                    transform: translateY(10px);
+                }
+            }
+            &.sum .wrapper__row__item:nth-child(5) {
+                transform: translateX(30px);
+
+                @include respond-to(mobile) {
+                    transform: translateY(3px);
+                }
+            }
+
+            @include respond-to(mobile) {
+                flex-flow: column nowrap;
+            }
+        }
+
+        @include respond-to(mobile) {
+            flex-flow: row nowrap;
+            justify-content: center;
+
+            gap: 20px;
+        }
+    }
+}

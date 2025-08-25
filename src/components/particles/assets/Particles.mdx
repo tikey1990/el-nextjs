@@ -1,0 +1,23 @@
+import { Meta } from "@storybook/blocks";
+
+import * as Stories from "./Particles.stories";
+
+<Meta of={Stories} />
+
+# Particles
+
+Это компонент звездного неба, который вставляется на фон всей страницы. <br />
+Компонент генерирует 2 слоя.<br />
+- Первый слой - с большими звездами, они двигаются медленнее и их меньше
+- Второй слой - с маленькими звездами, они двигаются быстрее и их больше
+
+Импортируем
+```
+import { ParticlesComponent } from "@components/Particles";
+```
+
+Вставляем
+```
+<ParticlesComponent />
+```
+
