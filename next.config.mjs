@@ -4,7 +4,7 @@ const nextConfig = {
   turbopack: {
     rules: {
       "*.svg": {
-        loaders: ["@svgr/webpack"],
+        loaders: [{ loader: "@svgr/webpack", options: { icon: true } }],
         as: "*.js",
       },
     },
@@ -41,7 +41,7 @@ const nextConfig = {
         test: /\.svg$/i,
         issuer: fileLoaderRule.issuer,
         resourceQuery: { not: [...fileLoaderRule.resourceQuery.not, /url/] }, // exclude if *.svg?url
-        use: ["@svgr/webpack"],
+        use: [{ loader: "@svgr/webpack", options: { icon: true } }],
       },
     );
 
