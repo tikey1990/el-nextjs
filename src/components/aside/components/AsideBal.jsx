@@ -3,7 +3,7 @@ import { VAR_HAS_PREMIUM_VISUAL_MODE, VAR_LINK_ROUTES } from "@vars";
 import { useDispatch, useSelector } from "react-redux";
 import { useRouter } from "next/navigation";
 import { IconRuble } from "@icons";
-import { setPrevBalance } from "@features";
+import { setPrevBalance, useGetBalanceMutation } from "@features";
 import { useAuth, useTypeDevice } from "@hooks";
 import { CountUp } from "@components";
 import classnames from "classnames";
@@ -22,6 +22,7 @@ export const AsideBal = () => {
   const router = useRouter();
   const dispatch = useDispatch();
   const isCheckedVisualMode = VAR_HAS_PREMIUM_VISUAL_MODE();
+  const [getBalance] = useGetBalanceMutation();
 
   /**
    * Получаем текущий баланс из store
@@ -34,6 +35,10 @@ export const AsideBal = () => {
     if (prevBalance !== balance)
       setTimeout(() => dispatch(setPrevBalance(balance)), 1000);
   }, [balance, prevBalance]);
+
+  useEffect(() => {
+    getBalance();
+  }, []);
 
   const handleClickBal = () =>
     isMobile &&
