@@ -2,13 +2,15 @@
 import { useGoogleLogin } from "@react-oauth/google";
 import { setLoginSocialsResponse } from "@features";
 import { useDispatch } from "react-redux";
+import { useContext } from "react";
+import { AuthContext } from "@/providers/auth";
 
 /**
  * Хук для получения response авторизации через соц сети
  * @returns {{tokenResponse: unknown, loginWithGoogle: () => void}}
  */
 export const useGetResponseAuthSocials = () => {
-  const currentDomain = window.location.origin;
+  const { host: currentDomain } = useContext(AuthContext);
   const dispatch = useDispatch();
 
   const loginWithGoogle = useGoogleLogin({

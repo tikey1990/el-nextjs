@@ -22,6 +22,7 @@ const nextConfig = {
   sassOptions: {
     includePaths: ["src/assets", "node_modules"], // Replace 'styles' with your Sass directory
     implementation: "sass-embedded",
+    silenceDeprecations: ["mixed-decls"],
   },
   webpack: (config, options) => {
     const fileLoaderRule = config.module.rules.find((rule) =>

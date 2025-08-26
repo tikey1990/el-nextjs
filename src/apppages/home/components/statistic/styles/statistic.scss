@@ -46,8 +46,10 @@
         .statistic-text-description {
             @include text-md();
 
-            font-size: 24px;
-            line-height: 28px;
+            & {
+                font-size: 24px;
+                line-height: 28px;
+            }
 
             @include respond-to(mobile) {
                 font-size: 15px;

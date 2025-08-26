@@ -15,10 +15,11 @@ const RootLayout = async ({ children }) => {
   const ua = userAgent({ headers: headersList }); // Is mobile
   const isMobile = ua.device.type === "mobile";
   const { isAuth } = await verifySession();
+  const host = headersList.get("host");
   return (
     <html>
       <body>
-        <AuthContextProvider value={{ isAuth }}>
+        <AuthContextProvider value={{ isAuth, host }}>
           <Flowbite theme={{ theme: flowBiteCustomTheme }}>
             <div className="app max-sm:overscroll-none">
               <StoreProvider>
