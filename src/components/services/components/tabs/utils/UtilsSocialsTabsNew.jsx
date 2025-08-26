@@ -28,7 +28,11 @@ export const utilsSocialsTabsNew = () => {
     });
 
   return configSocialTabsDataServicesNewFiltered?.map((elem, index) => (
-    <Link className={classItem(elem)} href={elem.name} key={index}>
+    <Link
+      className={classItem(elem)}
+      href={`/services/${elem.name}`}
+      key={index}
+    >
       <Tooltip theme={customThemeTooltip} content={elem.label} style="light">
         {elem.icon}
       </Tooltip>
