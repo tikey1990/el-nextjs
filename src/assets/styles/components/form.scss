@@ -1,4 +1,4 @@
-@import "@mixins";
+@use '../variables/colors' as *;
 
 .form {
     &__group {

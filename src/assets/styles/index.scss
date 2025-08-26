@@ -2,6 +2,8 @@
 @use "./mixins/bg" as *;
 @use "./mixins/utils" as *;
 
+@use "./components";
+
 h1 {
     font-size: 19px !important;
     text-align: center;

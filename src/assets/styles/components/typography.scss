@@ -1,4 +1,6 @@
-@import "@mixins";
+@use "../mixins/typography" as *;
+@use "../mixins/utils" as *;
+@use "../variables/colors" as *;
 
 // Текст
 .text {
