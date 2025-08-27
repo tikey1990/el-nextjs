@@ -29,7 +29,7 @@ export const AsideProfile = () => {
       {/* Категории */}
       <AsideCategoriesProfile />
 
-      {pathname === "api" && (
+      {pathname === "/profile/api" && (
         <div
           className="max-sm:-mt-4 sm:top-4 sm:sticky order-12"
           id="apiDocs"
