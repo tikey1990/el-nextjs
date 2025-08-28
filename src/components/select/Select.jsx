@@ -21,7 +21,7 @@ import {
  * @returns {JSX.Element}
  * @constructor
  */
-export const Select = ({ style, state, data, ...props }) => {
+export const Select = ({ style = "default", state, data, ...props }) => {
   const [selected, setSelected] = useState(
     Array.isArray(data) &&
       (data?.find((elem) => elem?.name === state?.name) ?? data[0]),
@@ -77,7 +77,7 @@ export const Select = ({ style, state, data, ...props }) => {
     >
       <div className={classListboxWrapper(style)}>
         <Listbox.Button
-          className={classListboxButton(style, active)}
+          className={classListboxButton(style || "default", active)}
           onClick={handleClickListBox}
         >
           <span className="block truncate">{nameFilter(state)}</span>

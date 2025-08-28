@@ -37,7 +37,6 @@ const OrdersTable = () => {
   const [filters, setFilters] = useState(filtersInitState);
 
   const params = useParams();
-  console.log(params);
 
   const {
     prevPaymentsAbsoluteAllCount,

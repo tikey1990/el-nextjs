@@ -20,7 +20,8 @@ import {
  * Хук для получения параметров url
  */
 export const useProfileOrderParamsUrl = () => {
-  const params = useSearchParams();
+  const searchParams = useSearchParams();
+  const params = new URLSearchParams(searchParams);
 
   // Get параметр статуса заказа
   const paramStatus = params.get("status");

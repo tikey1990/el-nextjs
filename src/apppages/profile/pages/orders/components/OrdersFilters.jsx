@@ -7,7 +7,6 @@ import { Disclosure, Transition } from "@headlessui/react";
 import { useTypeDevice } from "@hooks";
 import { TextInput, Button } from "flowbite-react";
 import React, { useCallback, memo } from "react";
-import { lazyReactNaiveRetry } from "@utils";
 import { IconBtnSearch } from "@icons/btn";
 import debounce from "lodash.debounce";
 import { Select } from "@components";
@@ -25,7 +24,7 @@ import {
   utilRenderOrderSocials,
   utilOrderFiltersUpdate,
 } from "../utils";
-import { useRouter, useSearchParams } from "next/navigation";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import PaginationOrders from "@apppages/profile/components/PaginationOrders";
 
 /**
@@ -80,7 +79,9 @@ export const OrdersFilters = memo(function OrdersFilters({
 
   const { isMobile } = useTypeDevice();
   const router = useRouter();
-  const searchParams = useSearchParams();
+  const pathname = usePathname();
+  const readOnlySearchParams = useSearchParams();
+  const searchParams = new URLSearchParams(readOnlySearchParams);
   const { paramWebsite, paramSearch, paramStatus, paramType, params } =
     useProfileOrderParamsUrl();
 
@@ -152,22 +153,16 @@ export const OrdersFilters = memo(function OrdersFilters({
 
     if (value() !== "Все соцсети" && value() !== "Все услуги") {
       params.set(name, value());
-      router.push(
-        `/${handle?.routeParent}/${handle?.routeEnName}/1?${params.toString()}`,
-      );
+      router.push(`${pathname}/1?${params.toString()}`);
     } else if (value() === "Все соцсети") {
       setFilters({ ...filters, scrollPage: null, website: null, type: null });
       searchParams.delete("type");
       searchParams.delete("website");
-      router.push(
-        `/${handle?.routeParent}/${handle?.routeEnName}/1?${searchParams.toString()}`,
-      );
+      router.push(`${pathname}/1?${searchParams.toString()}`);
     } else {
       setFilters({ ...filters, scrollPage: null, type: null });
       searchParams.delete("type");
-      router.push(
-        `/${handle?.routeParent}/${handle?.routeEnName}/1?${searchParams.toString()}`,
-      );
+      router.push(`${pathname}/1?${searchParams.toString()}`);
     }
   };
 
@@ -176,7 +171,7 @@ export const OrdersFilters = memo(function OrdersFilters({
    */
   const allHandle = () => {
     setFilters({ ...filters, ...filtersInitState });
-    router.push(`/${handle?.routeParent}/${handle?.routeEnName}/1`);
+    router.push(`${pathname}/1`);
   };
 
   /**

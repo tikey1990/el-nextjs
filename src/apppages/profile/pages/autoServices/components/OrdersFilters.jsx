@@ -92,7 +92,7 @@ export const OrdersFilters = memo(function OrdersFilters({
     setFilterStatus(value);
 
     params.set(name, value);
-    router.push(`/${pathname}/1?${params.toString()}`);
+    router.push(`${pathname}/1?${params.toString()}`);
     setFilters({ ...filters, scrollPage: null, status: value });
   };
 
