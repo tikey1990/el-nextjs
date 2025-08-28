@@ -37,7 +37,7 @@ const ConcreteServicePage = async ({ params }) => {
             Шаг 2
           </p>
         </div>
-        <div>
+        <div className="mt-8">
           <div dangerouslySetInnerHTML={{ __html: service_text }} />
         </div>
       </div>
