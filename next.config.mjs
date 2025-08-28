@@ -4,7 +4,28 @@ const nextConfig = {
   turbopack: {
     rules: {
       "*.svg": {
-        loaders: [{ loader: "@svgr/webpack", options: { icon: true } }],
+        loaders: [
+          {
+            loader: "@svgr/webpack",
+            options: {
+              memo: true,
+              svgo: true,
+              svgoConfig: {
+                plugins: [
+                  {
+                    name: "preset-default",
+                    params: {
+                      overrides: {
+                        removeViewBox: false,
+                        cleanupIds: false,
+                      },
+                    },
+                  },
+                ],
+              },
+            },
+          },
+        ],
         as: "*.js",
       },
     },
@@ -41,7 +62,28 @@ const nextConfig = {
         test: /\.svg$/i,
         issuer: fileLoaderRule.issuer,
         resourceQuery: { not: [...fileLoaderRule.resourceQuery.not, /url/] }, // exclude if *.svg?url
-        use: [{ loader: "@svgr/webpack", options: { icon: true } }],
+        use: [
+          {
+            loader: "@svgr/webpack",
+            options: {
+              memo: true,
+              svgo: true,
+              svgoConfig: {
+                plugins: [
+                  {
+                    name: "preset-default",
+                    params: {
+                      overrides: {
+                        removeViewBox: false,
+                        cleanupIds: false,
+                      },
+                    },
+                  },
+                ],
+              },
+            },
+          },
+        ],
       },
     );
 

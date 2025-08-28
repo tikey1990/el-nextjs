@@ -10,9 +10,9 @@ const ServicesPage = () => {
       <aside className="aside max-sm:w-full sm:min-w-[278px] relative flex flex-nowrap flex-col gap-4">
         <AsidePage />
       </aside>
-      <IconArrowTop />
       <div className="flex-col flex">
         <div className="flex z-[10] w-full sm:max-h-[158px] flex-wrap sm:flex-nowrap flex-row max-sm:justify-center items-center p-5 sm:p-10 gap-5 sm:gap-10 bg-white shadow-content rounded-2xl">
+          <IconArrowTop />
           <p className="font-pn-extraboldit text-2xl sm:text-[32px] text-gray-600 max-sm:order-1 max-sm:text-center">
             Выберите социальную сеть для продвижения
           </p>

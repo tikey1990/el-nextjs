@@ -23,14 +23,12 @@ export const RefTable = () => {
       {/* Таблица */}
       <Table className="!rounded-b-2xl">
         <TableHead>
-          <TableRow>
-            <TableHeadCell className="text-center sm:w-[40%]">
-              Бонус
-            </TableHeadCell>
-            <TableHeadCell className="text-center">
-              Количество активных рефералов
-            </TableHeadCell>
-          </TableRow>
+          <TableHeadCell className="text-center sm:w-[40%]">
+            Бонус
+          </TableHeadCell>
+          <TableHeadCell className="text-center">
+            Количество активных рефералов
+          </TableHeadCell>
         </TableHead>
         <TableBody className="outline outline-1 outline-[#E8EBF1] -translate-y-[1px] -outline-offset-1 rounded-b-2xl">
           <TableRow>
