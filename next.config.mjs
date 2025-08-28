@@ -76,6 +76,7 @@ const nextConfig = {
                       overrides: {
                         removeViewBox: false,
                         cleanupIds: false,
+                        mergePaths: false,
                       },
                     },
                   },

@@ -35,7 +35,7 @@ const Header = async ({
           {/* Actions */}
           <div className="header__actions sm:w-[200px]">
             {/* Контакты */}
-            <Link href="info">
+            <Link href="/info">
               <Button
                 className="py-[14px] px-[25px] h-[44px]"
                 color={typeButtonContacts}
