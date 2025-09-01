@@ -11,7 +11,6 @@ import { usePathname } from "next/navigation";
  */
 const Aside = () => {
   const pathname = usePathname();
-  console.log(pathname);
 
   return (
     <aside className="aside max-sm:w-full sm:min-w-[278px] relative flex flex-nowrap flex-col gap-4">

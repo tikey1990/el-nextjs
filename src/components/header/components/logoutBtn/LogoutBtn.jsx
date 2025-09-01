@@ -13,7 +13,7 @@ const LogoutBtn = () => {
     <>
       {isAuth ? (
         <Button
-          onClick={() => utilAuthLogout(dispatch, router.push)}
+          onClick={() => utilAuthLogout(dispatch, router)}
           className="py-[14px] px-[25px] h-[44px]"
           color="secondaryTransparent"
           size="custom"

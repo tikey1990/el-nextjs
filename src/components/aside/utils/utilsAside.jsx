@@ -66,7 +66,6 @@ export const utilAsideRenderServices = (
       setDataService(dataCategories);
     }
   }, [feesData, service]);
-  console.log(feesData, service);
   return (
     Array.isArray(dataService) &&
     dataService?.map((elem, index) => {

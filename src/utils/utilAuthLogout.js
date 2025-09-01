@@ -14,9 +14,9 @@ import { deleteCookie, setCookie } from "@utils";
 /**
  * Утилита для выхода из аккаунта
  * @param dispatch - Dispatch
- * @param navigate - Navigate
+ * @param router - Router instance
  */
-export const utilAuthLogout = (dispatch, navigate) => {
+export const utilAuthLogout = (dispatch, router) => {
   // localStorage.removeItem("auth");
   deleteCookie("auth");
   dispatch(logout());
@@ -32,7 +32,7 @@ export const utilAuthLogout = (dispatch, navigate) => {
   );
   dispatch(setTemplates(null));
   dispatch(setCreateTemplate(null));
-  navigate("/");
+  window.location.href = "/logout";
 };
 
 /**

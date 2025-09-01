@@ -43,7 +43,6 @@ export const OrdersTable = () => {
     orders,
     data,
   } = useProfileOrdersData();
-  console.log(pagesCount);
   const { observerTarget, listOrders, showTarget } =
     useProfileTableIntersection(
       getOrdersPageQuery,

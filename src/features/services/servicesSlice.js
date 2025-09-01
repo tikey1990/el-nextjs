@@ -72,7 +72,6 @@ export const servicesSlice = createSlice({
      * Установка информации маршрута
      */
     setServicesRoute: (state, action) => {
-      console.log(action.payload);
       state.route = action.payload;
     },
 
