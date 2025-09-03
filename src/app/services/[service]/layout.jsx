@@ -3,6 +3,30 @@ import {
   AsidePage,
 } from "@components/aside/components";
 
+export async function generateMetadata({ params }) {
+  const { service } = await params;
+
+  const feesData = await fetch("https://easyliker.ru/api/ajax/fees", {
+    method: "POST",
+    headers: {
+      "content-type": "application/x-www-form-urlencoded",
+      "x-requested-with": "XMLHttpRequest",
+      Accept: "*/*",
+    },
+    cache: "force-cache",
+    body: "MethodAndForm=getFeesTypes",
+  }).then((resp) => {
+    return resp.json();
+  });
+  const service_text = feesData.data.find(
+    (item) => item.name === service,
+  )?.html_title;
+
+  return {
+    title: service_text,
+  };
+}
+
 const ConcreteServiceLayout = async ({ children, params }) => {
   const { service, category } = await params;
   const feesData = await fetch("https://easyliker.ru/api/ajax/fees", {

@@ -10,6 +10,15 @@ import { Details } from "@components";
 import { verifySession } from "@/server/auth";
 import { AuthContextProvider } from "@/providers/auth";
 
+export const metadata = {
+  title:
+    "EasyLiker - накрутка зрителей для Твич, Ютуб, Вк Видео и Кик. Лайки, подписчики, просмотры для Инстаграм, Телеграм, Тик ток, Вконтакте",
+  description:
+    "EasyLiker.ru - профессиональный сервис накрутки в социальных сетях. Мы сделаем вас или ваш бизнес популярным в Instagram, ВКонтакте, YouTube, Telegram, TikTok, Twitch, Twitter!",
+  keywords:
+    "накрутка лайков, накрутка vk, накрутить вконтакте, раскрутка социальных сетей, smm, продвижение бизнеса, раскрутка аккаунта, накрутка подписчиков, услуги пиара, Instagram, ВКонтакте, YouTube, Telegram, TikTok, Twitch, Twitter, накрутка всего",
+};
+
 const RootLayout = async ({ children }) => {
   const headersList = await headers();
   const ua = userAgent({ headers: headersList }); // Is mobile

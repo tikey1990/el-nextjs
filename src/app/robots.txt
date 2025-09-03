@@ -1,0 +1,7 @@
+User-agent: *
+Disallow: /*register?
+Disallow: /*?recovery_key=
+Disallow: /*?
+Disallow: /*fees?
+Disallow: /*profile
+Clean-param: tracking
