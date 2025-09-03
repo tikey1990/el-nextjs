@@ -18,12 +18,14 @@ export async function generateMetadata({ params }) {
   }).then((resp) => {
     return resp.json();
   });
-  const service_text = feesData.data.find(
-    (item) => item.name === service,
-  )?.html_title;
+
+  const service_obj = feesData.data.find((item) => item.name === service);
 
   return {
-    title: service_text,
+    title: service_obj?.html_title?.replace(/<[^>]*>?/gm, "") || "",
+    description: (
+      service_obj?.html_text?.replace(/<[^>]*>?/gm, "") || ""
+    ).slice(0, 250),
   };
 }
 
