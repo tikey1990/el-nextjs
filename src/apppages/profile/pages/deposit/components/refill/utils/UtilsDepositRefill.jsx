@@ -1,4 +1,7 @@
-import { ImgRefillPaymentRobokassa } from "@apppages/profile/pages/deposit/components/refill/assets/images/index.js";
+import {
+  ImgRefillPaymentRobokassa,
+  ImgRefillPaymentHeleket,
+} from "@apppages/profile/pages/deposit/components/refill/assets/images/index.js";
 
 import {
   IconRefillPaymentCryptomus,
@@ -14,6 +17,7 @@ import {
   IconRefillPaymentCard,
   IconRefillPaymentErc,
 } from "../assets/icons";
+import Image from "next/image";
 
 /**
  * Данные для рендера выбора платежной системы
@@ -26,7 +30,7 @@ export const dataRefillPayments = [
   },
   {
     icon: (
-      <img
+      <Image
         className="w-6 h-6 rounded-full"
         src={ImgRefillPaymentRobokassa}
         alt="robokassa"
@@ -56,9 +60,15 @@ export const dataRefillPayments = [
     text: "Yookassa",
   },
   {
-    icon: <IconRefillPaymentCryptomus />,
-    name: "cryptomus",
-    text: "Cryptomus",
+    icon: (
+      <Image
+        src={ImgRefillPaymentHeleket}
+        className="w-6 h-6 rounded-full"
+        alt={"heleket"}
+      />
+    ),
+    name: "heleket",
+    text: "Heleket",
   },
   {
     icon: <IconRefillPaymentErc />,
