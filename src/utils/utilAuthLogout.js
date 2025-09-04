@@ -17,7 +17,7 @@ import { deleteCookie, setCookie } from "@utils";
  * @param router - Router instance
  */
 export const utilAuthLogout = (dispatch, router) => {
-  // localStorage.removeItem("auth");
+  localStorage.removeItem("auth");
   deleteCookie("auth");
   dispatch(logout());
   dispatch(clearMassOrders());
