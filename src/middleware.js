@@ -7,7 +7,7 @@ export function middleware(request) {
     response.cookies.set("auth", "", {
       expires: new Date(0),
       path: "/",
-      domain: "easyliker.ru",
+      domain: ".easyliker.ru",
     });
     return response;
   }

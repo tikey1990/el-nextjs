@@ -24,6 +24,7 @@ import {
 } from "@apppages/auth/components";
 import { utilAuthLoginWithSocials } from "@apppages/auth/utils";
 import { loginSchemaValidation } from "@apppages/auth/config";
+import { useRouter } from "next/navigation";
 
 /**
  * Страница авторизации
@@ -32,6 +33,7 @@ import { loginSchemaValidation } from "@apppages/auth/config";
  */
 const LoginPage = () => {
   const { error: authError } = useSelector((state) => state.auth);
+  const router = useRouter();
 
   const recaptchaRef = useRef(null);
   const [showPassword, setShowPassword] = useState(false);
@@ -63,6 +65,7 @@ const LoginPage = () => {
 
     if (recaptchaValue && VAR_IS_MODE_PROD) {
       login({ ...data, captcha: encryptedCaptchaKey, ckey: key, iv: iv });
+      router.push("/services");
     } else if (!recaptchaValue && VAR_IS_MODE_PROD) {
       utilSetErrorCaptchaForm(setError);
     } else {
