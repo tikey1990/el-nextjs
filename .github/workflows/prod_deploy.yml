@@ -1,0 +1,50 @@
+name: Prod deploy
+
+# События
+on:
+    pull_request:
+        types: [opened, reopened, edited, synchronize]
+        branches:
+            - "main"
+
+env:
+    DEPLOY_PATH: /home
+    BUILD_SCRIPT: npm run el-build
+    BUILD_SCRIPT_OUTPUT: build
+
+jobs:
+    deploy:
+        runs-on: ubuntu-latest
+        steps:
+            # Делаем checkout текущей ветки
+            - uses: actions/checkout@v4
+
+            # Устанавливаем Node.JS для сборки приложения
+            - uses: actions/setup-node@v4.0.2
+              with:
+                  node-version: "20"
+
+            # Устанавливаем зависимости для сборки
+            - name: Install Dependencies
+              run: npm i --force
+
+            # Устанавливаем env
+            - name: Set VITE_IS_MODE_PROD
+              run: echo "VITE_IS_MODE_PROD=true" >> $GITHUB_ENV
+
+            # Собираем приложение
+            - name: Build Appliction
+              run: $BUILD_SCRIPT
+
+            # Доставляем собранное приложение на сервер
+            - name: Deploy to Server
+              uses: appleboy/scp-action@master
+              with:
+                  host: ${{ secrets.DEPLOY_SERVER_HOST_PROD }}
+                  port: ${{ secrets.DEPLOY_SERVER_PORT_PROD }}
+                  username: ${{ secrets.DEPLOY_SERVER_USERNAME_PROD }}
+                  key: ${{ secrets.DEPLOY_SERVER_KEY_PROD }}
+                  source: ${{ env.BUILD_SCRIPT_OUTPUT }}
+                  target: ${{ env.DEPLOY_PATH }}
+            - name: Print Info
+              run: echo "Deployed at https://easyliker.ru"

@@ -1,0 +1,17 @@
+name: Prettier and eslint check
+on: push
+jobs:
+    lint:
+        runs-on: ubuntu-latest
+        steps:
+            # Делаем checkout текущей ветки
+            - name: Checkout
+              uses: actions/checkout@v2
+
+            # Устанавливаем зависимости
+            - name: Install Dependencies
+              run: yarn
+
+            # Запускаем проверку кода через Eslint и Prettier
+            - name: Lint-staged
+              run: npx lint-staged

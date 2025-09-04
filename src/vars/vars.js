@@ -9,8 +9,8 @@ export const VAR_AUTH_GOOGLE_CLIENT_ID =
 /**
  * Находится ли приложение в режиме продакшен
  */
-export const VAR_IS_MODE_PROD =
-  import.meta.env && import.meta.env?.VITE_IS_MODE_PROD === "true";
+export const VAR_IS_MODE_PROD = true;
+// import.meta.env && import.meta.env?.VITE_IS_MODE_PROD === "true";
 
 /**
  * Находится ли приложение в режиме продакшен
