@@ -32,6 +32,7 @@ export const utilAuthLogout = (dispatch, router) => {
   );
   dispatch(setTemplates(null));
   dispatch(setCreateTemplate(null));
+  router.refresh();
   window.location.href = "/logout";
 };
 
