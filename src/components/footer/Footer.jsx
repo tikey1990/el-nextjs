@@ -17,7 +17,13 @@ const Footer = () => {
   const { isAuth } = useAuth();
 
   // Скрываем футер на страницах авторизации и регистрации
-  const isShowFooter = pathname !== "/auth" && pathname !== "/register";
+  const isShowFooter =
+    pathname !== "/auth" &&
+    pathname !== "/register" &&
+    pathname !== "/login" &&
+    pathname !== "/agreement" &&
+    pathname !== "/privacy" &&
+    pathname !== "/offer";
 
   return (
     <>
