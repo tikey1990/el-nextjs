@@ -27,9 +27,9 @@ import React, {
 } from "react";
 import { IconStatusWarn } from "@icons/status/index.js";
 import { shallowEqual, useSelector } from "react-redux";
-import { setMassOrders } from "@features";
+import { setMassOrders, useGetServicesQuery } from "@features";
 import { Button } from "flowbite-react";
-import { useTypeDevice } from "@hooks";
+import { getServiceInfoFromPath, useTypeDevice } from "@hooks";
 import classNames from "classnames";
 import classnames from "classnames";
 import { v4 as uuidv4 } from "uuid";
@@ -39,23 +39,21 @@ import * as yup from "yup";
 import { classButton, classPrice, classRuble } from "../utils";
 import { configServicesInfoQuantity } from "../config";
 import { BannerInfo } from "@components/services/components/banner";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import Link from "next/link";
 
 /**
  * Рендер типов категории услуги
  */
-export const utilServicesRenderTypes = () => {
+export const UtilServicesRenderTypes = () => {
   const qualities = useSelector((state) => state.services.route.qualities); // Все качества выбранной услуги
-  const typeName = useSelector(
-    (state) => state.services.route.serviceInfo?.type,
-  ); // Название типа выбранной услуги
-  const serviceName = useSelector(
-    (state) => state.services.route.serviceInfo?.service,
-  ); // Название выбранной соц сети
-  const categoryName = useSelector(
-    (state) => state.services.route.serviceInfo?.name,
-  ); // Название выбранной категории соц сети
+  const pathname = usePathname();
+  const queryServices = useGetServicesQuery();
+  const { data: servicesData } = queryServices;
+  const serviceInfo = getServiceInfoFromPath(pathname, servicesData);
+  const typeName = serviceInfo?.type; // Название типа выбранной услуги
+  const serviceName = serviceInfo?.service; // Название выбранной соц сети
+  const categoryName = serviceInfo?.name; // Название выбранной категории соц сети
   const [prevQualities, setPrevQualities] = useState(qualities);
   const [activeButton, setActiveButton] = useState(typeName);
   const router = useRouter();
@@ -81,7 +79,7 @@ export const utilServicesRenderTypes = () => {
       color={elem.name === activeButton ? "primary" : "secondary"}
       onClick={() => {
         setActiveButton(elem.name);
-        router.push(buttonLink(elem));
+        router.replace(buttonLink(elem));
       }}
       key={index}
       size="xs"

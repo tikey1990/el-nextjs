@@ -21,6 +21,42 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import { useParams, usePathname } from "next/navigation";
 
+export const getServiceInfoFromPath = (pathname, servicesData) => {
+  const service = pathname.split("/")[2];
+
+  /**
+   * Получение категории из маршрута
+   */
+  const category = pathname.split("/")[3];
+
+  /**
+   * Получение типа из маршрута
+   */
+  const type = pathname.split("/")[4];
+
+  /**
+   * Получение типа из маршрута
+   */
+  const quality = pathname.split("/")[5] ?? null;
+
+  // Получение информации о соц. сети и категории
+  const infoService =
+    servicesData?.data?.find((elem) => elem.name === service) ?? null;
+
+  // Получение информации о категории соц. сети
+  const infoCategory =
+    infoService?.categories?.find((elem) => elem.name === category) ?? null;
+
+  // Установка информации о странице услуги
+  return {
+    ...infoService,
+    ...infoCategory,
+    quality,
+    service,
+    type,
+  };
+};
+
 /**
  * Хук для определения маршрутам страницы услуги
  */

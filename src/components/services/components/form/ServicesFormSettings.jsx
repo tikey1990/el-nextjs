@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import { ServicesQualityInfo } from "@components/services/components/ServicesQualityInfo";
 import {
   utilServicesRenderQualities,
-  utilServicesRenderTypes,
+  UtilServicesRenderTypes,
 } from "@components/services/utils";
 
 /**
@@ -26,7 +26,7 @@ export const ServicesFormSettings = () => {
       <div className="flex flex-nowrap flex-col gap-5 max-w-full sm:w-[350px] lg:w-[450px] xl:w-[420px] w-full sm:p-5 bg-white sm:bg-[#f0faff] rounded-xl">
         {/* Тип категории услуги */}
         <div className="grid grid-cols-1 sm:grid-cols-2  gap-2.5 sm:gap-4">
-          {utilServicesRenderTypes()}
+          <UtilServicesRenderTypes />
         </div>
 
         {/* Качество категории услуги */}

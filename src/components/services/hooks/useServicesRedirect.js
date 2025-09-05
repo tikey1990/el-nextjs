@@ -31,14 +31,12 @@ export const useServicesRedirect = () => {
           : qualities[0].quality[0].name.split("_")[0];
 
       if (!serviceInfo.quality && serviceInfo.type) {
-        router.push(
+        router.replace(
           `/${VAR_LINK_ROUTES.services}/${serviceInfo.service}/${serviceInfo.name}/${serviceInfo.type}/${currentFirstQuality}`,
-          { replace: true },
         );
       } else if (!serviceInfo.quality && !serviceInfo.type) {
-        router.push(
+        router.replace(
           `/${VAR_LINK_ROUTES.services}/${serviceInfo.service}/${serviceInfo.name}/${currentFirstType}/${currentFirstQuality}`,
-          { replace: true },
         );
       }
     }

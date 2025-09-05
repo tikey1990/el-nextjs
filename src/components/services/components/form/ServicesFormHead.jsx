@@ -1,6 +1,9 @@
 "use client";
 import { capitalizeFirstLetter } from "@utils";
 import { useSelector } from "react-redux";
+import { usePathname } from "next/navigation";
+import { useGetServicesQuery } from "@features";
+import { getServiceInfoFromPath } from "@hooks";
 
 /**
  * Компонент шапки формы
@@ -8,12 +11,14 @@ import { useSelector } from "react-redux";
  * @constructor
  */
 export const ServicesFormHead = () => {
-  const title = useSelector(
-    (state) => state.services.route.serviceInfo?.ru_name || "",
-  );
-  const service = useSelector(
-    (state) => state.services.route.serviceInfo?.service || "",
-  );
+  const pathname = usePathname();
+  const queryServices = useGetServicesQuery();
+  const { data: servicesData } = queryServices;
+  const serviceInfo = getServiceInfoFromPath(pathname, servicesData);
+
+  const title = serviceInfo?.ru_name;
+  const service = serviceInfo?.service;
+
   const nameService = () => {
     switch (service) {
       case "vk":

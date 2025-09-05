@@ -12,8 +12,8 @@ import { useServicesRedirect } from "@components/services/hooks";
 
 const ServiceCategoryPage = () => {
   const isCheckedVisualMode = VAR_HAS_PREMIUM_VISUAL_MODE();
-  useLoadServices();
   useServicesRedirect();
+  useLoadServices();
   return (
     <>
       <div className="flex flex-col w-full h-fit">
