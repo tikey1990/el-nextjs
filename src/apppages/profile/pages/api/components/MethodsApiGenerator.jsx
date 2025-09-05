@@ -73,12 +73,10 @@ export const MethodsApiGenerator = ({
 
         <Table className="w-full !rounded-b-2xl">
           <TableHead>
-            <TableRow>
-              <TableHeadCell className="normal-case">Параметры</TableHeadCell>
-              <TableHeadCell className="normal-case !pl-4 sm:!pl-5">
-                Описание
-              </TableHeadCell>
-            </TableRow>
+            <TableHeadCell className="normal-case">Параметры</TableHeadCell>
+            <TableHeadCell className="normal-case !pl-4 sm:!pl-5">
+              Описание
+            </TableHeadCell>
           </TableHead>
           <TableBody className="outline outline-1 outline-[#E8EBF1] -translate-y-[1px] -outline-offset-1 rounded-b-2xl">
             {renderParamsQuery(dataParamsQuery)}
@@ -95,7 +93,13 @@ export const MethodsApiGenerator = ({
         <SyntaxHighlighter
           className="rounded-lg"
           language="json"
-          style={dracula}
+          style={{
+            ...dracula,
+            'code[class*="language-"]': {
+              ...dracula['code[class*="language-"]'],
+              whiteSpace: "pre-wrap",
+            },
+          }}
           wrapLongLines
         >
           {successResponse}
