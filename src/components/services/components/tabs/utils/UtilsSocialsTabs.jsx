@@ -35,7 +35,6 @@ export const UtilsSocialsTabs = () => {
           className={classItem(elem)}
           href={"/services/" + elem.name}
           key={index}
-          rel="canonical"
         >
           <Tooltip
             theme={customThemeTooltip}

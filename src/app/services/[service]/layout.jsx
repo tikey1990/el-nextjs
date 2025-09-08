@@ -2,6 +2,7 @@ import {
   AsideCategoriesServices,
   AsidePage,
 } from "@components/aside/components";
+import Head from "next/head";
 
 export async function generateMetadata({ params }) {
   const { service } = await params;
@@ -26,6 +27,9 @@ export async function generateMetadata({ params }) {
     description: (
       service_obj?.html_text?.replace(/<[^>]*>?/gm, "") || ""
     ).slice(0, 250),
+    alternates: {
+      canonical: `https://easyliker.ru/services/${service}/`,
+    },
   };
 }
 
