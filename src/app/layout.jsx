@@ -9,6 +9,7 @@ import Footer from "@components/footer/Footer";
 import { Details } from "@components";
 import { verifySession } from "@/server/auth";
 import { AuthContextProvider } from "@/providers/auth";
+import Script from "next/script";
 
 export const metadata = {
   title:
@@ -40,6 +41,7 @@ const RootLayout = async ({ children }) => {
             </div>
           </Flowbite>
         </AuthContextProvider>
+        <Script src="//code.jivo.ru/widget/Z0GOZbXarh" />
       </body>
     </html>
   );
