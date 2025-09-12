@@ -10,7 +10,6 @@ import { Details } from "@components";
 import { verifySession } from "@/server/auth";
 import { AuthContextProvider } from "@/providers/auth";
 import Script from "next/script";
-import YandexMetrika from "@components/YandexMetrika/YandexMerika";
 
 export const metadata = {
   title:
@@ -37,7 +36,6 @@ const RootLayout = async ({ children }) => {
                 <Header isMobile={isMobile} />
                 <Details version={1} />
                 {children}
-                <YandexMetrika />
                 <Footer />
               </StoreProvider>
             </div>
