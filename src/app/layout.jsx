@@ -12,6 +12,7 @@ import { AuthContextProvider } from "@/providers/auth";
 import Script from "next/script";
 import { Suspense } from "react";
 import Metrika from "@components/YandexMetrika/YandexMetrica";
+import { ToastContainer } from "react-toastify";
 
 export const metadata = {
   title:
@@ -28,11 +29,27 @@ const RootLayout = async ({ children }) => {
   const isMobile = ua.device.type === "mobile";
   const { isAuth } = await verifySession();
   const host = headersList.get("host");
+  const positionNotification = isMobile ? "top-center" : "bottom-left";
   return (
     <html>
       <body>
         <AuthContextProvider value={{ isAuth, host }}>
           <Flowbite theme={{ theme: flowBiteCustomTheme }}>
+            <ToastContainer
+              toastStyle={{
+                minWidth: isMobile ? "initial" : "max-content",
+                maxWidth: isMobile ? "initial" : "600px",
+              }}
+              bodyStyle={{
+                maxWidth: isMobile ? "initial" : "600px",
+                minWidth: isMobile ? "initial" : "350px",
+              }}
+              position={positionNotification}
+              autoClose={4000}
+              theme="colored"
+              newestOnTop
+              draggable
+            />
             <div className="app max-sm:overscroll-none">
               <StoreProvider>
                 <Header isMobile={isMobile} />

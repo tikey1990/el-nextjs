@@ -37,7 +37,9 @@ export const AsideBal = () => {
   }, [balance, prevBalance]);
 
   useEffect(() => {
-    getBalance();
+    if (isAuth) {
+      getBalance();
+    }
   }, []);
 
   const handleClickBal = () =>
