@@ -3,6 +3,7 @@ import "react-toastify/dist/ReactToastify.css";
 import Head from "next/head";
 import {
   Adv,
+  HomeRecoveryPassword,
   Preview,
   Refill,
   Services,
@@ -25,6 +26,7 @@ const App = async () => {
         />
         <meta name="robots" content="noindex,nofollow" />
       </Head>
+      <HomeRecoveryPassword />
       <Preview />
       <Statistic />
       <Services />
