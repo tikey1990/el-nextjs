@@ -42,7 +42,7 @@ const ConcreteServiceLayout = async ({ children, params }) => {
       "x-requested-with": "XMLHttpRequest",
       Accept: "*/*",
     },
-    cache: "force-cache",
+    next: { revalidate: 60 * 10 },
     body: "MethodAndForm=getFeesTypes",
   }).then((resp) => {
     return resp.json();

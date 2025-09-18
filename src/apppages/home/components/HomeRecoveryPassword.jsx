@@ -72,7 +72,7 @@ export const HomeRecoveryPassword = () => {
       utilRefreshLoginToken(data?.data, dispatch);
       router.push(`/${VAR_LINK_ROUTES.profile}/${VAR_LINK_ROUTES.orders}`); // Делаем редирект на страницу профиля со всеми заказами
     }
-  }, [recoveryPasswordQuery]);
+  }, [isLoading, isSuccess]);
 
   /**
    * Submit form
