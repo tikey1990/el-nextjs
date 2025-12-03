@@ -84,10 +84,11 @@ export const utilHandleObserveTarget = (
   if (page < pagesCount) {
     setShowTarget(false);
     setFilters((prev) => ({ ...prev, scrollPage: page + 1 }));
-    const path = `${page + 1}`;
+    let url = `${basePath}?page=${page + 1}`;
+    if (params.toString()) {
+      url = `${url}&${params.toString()}`;
+    }
 
-    navigate(`${basePath}/${path}?${params.toString()}`, undefined, {
-      shallow: true,
-    });
+    navigate(null, "", url);
   }
 };

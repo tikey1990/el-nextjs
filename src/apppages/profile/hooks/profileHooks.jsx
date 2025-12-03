@@ -33,6 +33,7 @@ export const useProfileOrderParamsUrl = () => {
     params.get("type") === "Все услуги" ? "all" : params.get("type");
   // Get параметр поиска заказов
   const paramSearch = params.get("data_search");
+  params.delete("page");
 
   return { paramWebsite, paramStatus, paramSearch, paramType, params };
 };
@@ -73,7 +74,7 @@ export const useProfileTableIntersection = (
     () =>
       utilHandleObserveTarget(
         page,
-        router.push,
+        window.history.replaceState,
         params,
         setFilters,
         setShowTarget,
