@@ -48,7 +48,7 @@ const nextConfig = {
     implementation: "sass-embedded",
     silenceDeprecations: ["mixed-decls"],
   },
-  webpack: (config, options) => {
+  webpack: (config, { dev, isServer }) => {
     const fileLoaderRule = config.module.rules.find((rule) =>
       rule.test?.test?.(".svg"),
     );
@@ -93,6 +93,13 @@ const nextConfig = {
 
     // Modify the file loader rule to ignore *.svg, since we have it handled now.
     fileLoaderRule.exclude = /\.svg$/i;
+
+    if (!dev && isServer) {
+      config.optimization.splitChunks = {
+        minSize: 20000,
+        maxSize: 80000,
+      };
+    }
 
     return config;
   },
